@@ -10,9 +10,9 @@
 
 ### Introdução
 
-O objetivo deste projeto é a criação de um sistema de monitoramento e controle de temperatura através do uso de sensores e atuadores com a finalidade de pôr em prática os conhecimentos obtidos ao longo da disciplina de sistemas embarcados e de construir o protótipo de um produto que pode ser útil nos mais diversos cenários, como em sistemas de irrigação até processos industriais.
+O objetivo deste projeto é a criação de um sistema de monitoramento e controle de temperatura através do uso de sensores e atuadores com a finalidade de pôr em prática os conhecimentos obtidos ao longo da disciplina de sistemas embarcados e de construir o protótipo de um produto que pode ser útil nos mais diversos cenários, desde sistemas de irrigação até processos industriais.
 
-A aplicação a ser desenvolvida será composta por um microcontrolador, que nada mais é do que um circuito integrado que contém um processador, memória e periféricos de entrada e saída em um único chip, o que será utilizado vai ser o ESP-32, além disso esse sistema irá contar com um sensor de temperatura e um sensor de nível de água, que permitirá monitorar o grau de calor e de água do reservatório para que através de atuadores possa-se realizar o controle dessas variáveis. Os atuadores que serão utilizados vão uma bomba para ajustar o nível de água e uma resistência para promover o aquecimento do sistema. E por fim, para servir de interface entre o usuário e o hardware será utilizado um display LCD.
+A aplicação a ser desenvolvida será composta por um microcontrolador, que nada mais é do que um circuito integrado que contém um processador, memória e periféricos de entrada e saída em um único chip, o modelo que será utilizado é o ESP-32, além disso esse sistema irá contar com um sensor de temperatura e um sensor de nível de água, que permitirá monitorar o grau de calor e de água do reservatório para que através de atuadores possa-se realizar o controle dessas variáveis. Os atuadores que serão utilizados vão uma bomba para ajustar o nível de água e uma resistência para promover o aquecimento do sistema. E por fim, para servir de interface entre o usuário e o hardware será utilizado um display LCD.
 
 ### Objetivos
 
@@ -20,7 +20,8 @@ Este projeto tem como objetivos:
 
 - Realizar o monitoramento de temperatura e nível de água em tempo real;
 - Garantir que tanto o nível quanto a temperatura do reservatório estejam sempre acima de um ponto determinado;
-- Prover uma interface para a configuração das variáveis monitoradas.
+- Prover uma interface para a configuração das variáveis monitoradas;
+- Diminuir o disperdício de água;
 
 ### Casos de uso
 
@@ -30,7 +31,7 @@ Este projeto tem como objetivos:
 
 **Atores:** ESP-32, sensor de temperatura, sensor de nível e o display LCD.
 
-**Pré-condições:**
+**Pré-condições:** nenhuma.
 
 **Pós-condições:** o registro passa a ser exibido no display LCD.
 
@@ -60,7 +61,7 @@ Este projeto tem como objetivos:
 
 **Atores:** ESP-32 e um periférico de entrada como um teclado.
 
-**Pré-condições:**
+**Pré-condições:** nenhuma.
 
 **Pós-condições:** os dados são salvos e utilizados como parâmetros para a ativação dos atuadores.
 
@@ -70,6 +71,6 @@ Este projeto tem como objetivos:
 
 **Atores:** ESP-32 e um periférico de saída como um buzzer.
 
-**Pré-condições:**
+**Pré-condições:** nenhuma.
 
 **Pós-condições:** os dados são salvos e utilizados como parâmetros para a ativação dos atuadores.
