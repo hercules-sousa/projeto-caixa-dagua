@@ -35,15 +35,34 @@ Este projeto tem como objetivos:
 
 **Pós-condições:** o registro passa a ser exibido no display LCD.
 
+**Requisitos funcionais:**
+
+- Criar uma estrutura de dados para temperatura, nível de água, data e hora;
+- O sistema deve conseguir exibir no display a temperatura e nível de água.
+
+**Requisitos não funcionais:**
+
+- Confiabilidade: os dados mostrados precisam estar sempre disponíveis;
+- Verossimilhança: as informações exibidas precisam corresponder às medições feitas.
+
 **Cenário 2:**
 
-**Descrição:** a aplicação deve monitorar a temperatura do reservatório e ligar a resistência para aquecê-la caso a quantidade de calor no sistema desça abaixo de um grau indesejado
+**Descrição:** a aplicação deve monitorar a temperatura do reservatório e ligar a resistência para aquecê-la caso a quantidade de calor no sistema desça abaixo de um grau indesejado.
 
 **Atores:** ESP-32, sensor de temperatura e resistência.
 
 **Pré-condições:** a temperatura está abaixo do ponto desejado
 
 **Pós-condições:** a temperatura do sistema deve voltar a um grau aceitável.
+
+**Requisitos funcionais:**
+
+- Acionará a resistência para aquecer a água, caso a temperatura fique abaixo do grau definido;
+- Guardar o parâmetro que irá indicar o nível mínimo de temperatura da água.
+
+**Requisitos não funcionais:**
+
+- Confiabilidade: o sistema deve funcionar de forma consistente e sem falhas, em outras palavras, a aplicação deve sempre garantir que a temperatura esteja acima do que foi previsamente estabelecido;
 
 **Cenário 3:**
 
@@ -55,6 +74,15 @@ Este projeto tem como objetivos:
 
 **Pós-condições:** o nível de água do sistema deve voltar a um grau aceitável.
 
+**Requisitos funcionais:**
+
+- Acionará a bomba de água, caso o nível fique abaixo do grau definido;
+- Guardar em uma variável o nível que irá indicar a altura mínima do reservatório.
+
+**Requisitos não funcionais:**
+
+- Confiabilidade: o sistema deve funcionar de forma consistente e sem falhas, isto é, ele deve sempre garantir que a água esteja acima da altura definida.
+
 **Cenário 4:**
 
 **Descrição:** a aplicação deve permitir a inserção de valores de entrada para atribuir qual o nível mínimo de nível de água e temperatura para que esses dados sejam utilizados para a ativação do atuadores.
@@ -65,12 +93,12 @@ Este projeto tem como objetivos:
 
 **Pós-condições:** os dados são salvos e utilizados como parâmetros para a ativação dos atuadores.
 
-**Cenário 5:**
+**Requisitos funcionais:**
 
-**Descrição:** emitir uma sinalização do sistema quando o nível de água ou temperatura estiverem abaixo.
+- Possibilitar ao usuário inserir dados sobre a temperatura mínima do sistema;
+- Possibilitar ao usuário inserir dados sobre o nível de água mínimo do sistema;
+- Guardar as informações em alguma estrutura de dados.
 
-**Atores:** ESP-32 e um periférico de saída como um buzzer.
+**Requisitos não funcionais:**
 
-**Pré-condições:** nenhuma.
-
-**Pós-condições:** os dados são salvos e utilizados como parâmetros para a ativação dos atuadores.
+- Usabilidade: o usuário não deve demorar mais de 1 min para descobrir como inserir os dados na aplicação
