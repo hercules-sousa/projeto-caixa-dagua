@@ -1,5 +1,7 @@
 # Relatório do projeto
 
+## Instituto Federal de Educação, Ciência e Tecnologia da Paraíba
+
 ## Curso de Bacharelado em Engenharia de Computação
 
 ## Disciplina: Sistemas Embarcados
@@ -101,4 +103,4 @@ Este projeto tem como objetivos:
 
 **Requisitos não funcionais:**
 
-- Usabilidade: o usuário não deve demorar mais de 1 min para descobrir como inserir os dados na aplicação
+- Usabilidade: o usuário não deve demorar mais de 1 min para descobrir como inserir os dados na aplicação.
