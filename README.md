@@ -57,7 +57,7 @@ Este projeto tem como objetivos:
 
 **Requisitos funcionais:**
 
-- Acionará a resistência para aquecer a água, caso a temperatura fique abaixo do grau definido;
+- Acionar a resistência para aquecer a água, caso a temperatura fique abaixo do grau definido;
 - Guardar o parâmetro que irá indicar o nível mínimo de temperatura da água.
 
 **Requisitos não funcionais:**
@@ -76,7 +76,7 @@ Este projeto tem como objetivos:
 
 **Requisitos funcionais:**
 
-- Acionará a bomba de água, caso o nível fique abaixo do grau definido;
+- Acionar a bomba de água, caso o nível fique abaixo do grau definido;
 - Guardar em uma variável o nível que irá indicar a altura mínima do reservatório.
 
 **Requisitos não funcionais:**
