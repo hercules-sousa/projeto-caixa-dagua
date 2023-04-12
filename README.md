@@ -87,7 +87,7 @@ Este projeto tem como objetivos:
 
 **Descrição:** a aplicação deve permitir a inserção de valores de entrada para atribuir qual o nível mínimo de nível de água e temperatura para que esses dados sejam utilizados para a ativação do atuadores.
 
-**Atores:** ESP-32 e um periférico de entrada como um teclado.
+**Atores:** ESP-32 e um periférico de entrada.
 
 **Pré-condições:** nenhuma.
 
