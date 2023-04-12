@@ -62,7 +62,7 @@ Este projeto tem como objetivos:
 
 **Requisitos não funcionais:**
 
-- Confiabilidade: o sistema deve funcionar de forma consistente e sem falhas, em outras palavras, a aplicação deve sempre garantir que a temperatura esteja acima do que foi previsamente estabelecido;
+- Confiabilidade: o sistema deve funcionar de forma consistente e sem falhas, em outras palavras, a aplicação deve sempre garantir que a temperatura esteja acima do que foi previamente estabelecido;
 
 **Cenário 3:**
 
