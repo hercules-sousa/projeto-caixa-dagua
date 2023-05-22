@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/CMakeFiles/bootloader
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/CMakeFiles/bootloader.rule
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/CMakeFiles/bootloader-complete.rule
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
