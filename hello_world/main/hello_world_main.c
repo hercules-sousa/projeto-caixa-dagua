@@ -1,43 +1,53 @@
 #include <stdio.h>
-#include "sdkconfig.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "esp_system.h"
-#include "esp_spi_flash.h"
-#include "driver/gpio.h"
+#include <stdbool.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+#include <ultrasonic.h>
+#include <esp_err.h>
 
-#define ECHO_PIN 19
-#define TRIG_PIN 18
+#define MAX_DISTANCE_CM 500 // 5m max
 
-void app_main(void)
+#define TRIGGER_GPIO 19
+#define ECHO_GPIO 18
+
+void ultrasonic_test(void *pvParameters)
 {
-    // printf("Hello world!\n");
+    ultrasonic_sensor_t sensor = {
+        .trigger_pin = TRIGGER_GPIO,
+        .echo_pin = ECHO_GPIO};
 
-    // esp_chip_info_t chip_info;
-    // esp_chip_info(&chip_info);
-    // printf("This is %s chip with %d CPU core(s), WiFi%s%s, ",
-    //        CONFIG_IDF_TARGET,
-    //        chip_info.cores,
-    //        (chip_info.features & CHIP_FEATURE_BT) ? "/BT" : "",
-    //        (chip_info.features & CHIP_FEATURE_BLE) ? "/BLE" : "");
+    ultrasonic_init(&sensor);
 
-    // printf("silicon revision %d, ", chip_info.revision);
-
-    // printf("%dMB %s flash\n", spi_flash_get_chip_size() / (1024 * 1024),
-    //        (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
-
-    // printf("Minimum free heap size: %d bytes\n", esp_get_minimum_free_heap_size());
-
-    gpio_pad_select_gpio(TRIG_PIN);
-    gpio_set_direction(TRIG_PIN, GPIO_MODE_OUTPUT);
-
-    for (int i = 10; i >= 0; i--)
+    while (true)
     {
-        printf("Restarting in %d seconds...\n", i);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-    }
+        float distance;
+        esp_err_t res = ultrasonic_measure(&sensor, MAX_DISTANCE_CM, &distance);
+        if (res != ESP_OK)
+        {
+            printf("Error %d: ", res);
+            switch (res)
+            {
+            case ESP_ERR_ULTRASONIC_PING:
+                printf("Cannot ping (device is in invalid state)\n");
+                break;
+            case ESP_ERR_ULTRASONIC_PING_TIMEOUT:
+                printf("Ping timeout (no device found)\n");
+                break;
+            case ESP_ERR_ULTRASONIC_ECHO_TIMEOUT:
+                printf("Echo timeout (i.e. distance too big)\n");
+                break;
+            default:
+                printf("%s\n", esp_err_to_name(res));
+            }
+        }
+        else
+            printf("Distance: %0.04f cm\n", distance * 100);
 
-    printf("Restarting now.\n");
-    fflush(stdout);
-    esp_restart();
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
+}
+
+void app_main()
+{
+    xTaskCreate(ultrasonic_test, "ultrasonic_test", configMINIMAL_STACK_SIZE * 3, NULL, 5, NULL);
 }
