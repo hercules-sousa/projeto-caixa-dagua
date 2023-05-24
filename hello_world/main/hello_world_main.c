@@ -1,53 +1,64 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
-#include <ultrasonic.h>
-#include <esp_err.h>
+#include "esp_system.h"
+#include "driver/gpio.h"
+#include "esp_log.h"
+#include "esp_timer.h"
 
-#define MAX_DISTANCE_CM 500 // 5m max
+#define TRIGGER_PIN 1
+#define ECHO_PIN 0
 
-#define TRIGGER_GPIO 19
-#define ECHO_GPIO 18
-
-void ultrasonic_test(void *pvParameters)
+float measureDistance()
 {
-    ultrasonic_sensor_t sensor = {
-        .trigger_pin = TRIGGER_GPIO,
-        .echo_pin = ECHO_GPIO};
+    // Enviar pulso de disparo
+    gpio_set_level(TRIGGER_PIN, 1);
+    ets_delay_us(10);
+    gpio_set_level(TRIGGER_PIN, 0);
 
-    ultrasonic_init(&sensor);
+    // Aguardar o pulso de eco
+    while (gpio_get_level(ECHO_PIN) == 0)
+        ;
 
-    while (true)
+    // Iniciar a contagem do tempo
+    uint64_t start_time = esp_timer_get_time();
+
+    // Aguardar o fim do pulso de eco
+    while (gpio_get_level(ECHO_PIN) == 1)
+        ;
+
+    // Calcular o tempo de viagem do pulso de eco
+    uint64_t end_time = esp_timer_get_time();
+    uint64_t travel_time = end_time - start_time;
+
+    // Calcular a distância em centímetros
+    float distance = (float)travel_time / 58.0;
+
+    return distance;
+}
+
+void distanceTask(void *pvParameters)
+{
+    float distance;
+
+    while (1)
     {
-        float distance;
-        esp_err_t res = ultrasonic_measure(&sensor, MAX_DISTANCE_CM, &distance);
-        if (res != ESP_OK)
-        {
-            printf("Error %d: ", res);
-            switch (res)
-            {
-            case ESP_ERR_ULTRASONIC_PING:
-                printf("Cannot ping (device is in invalid state)\n");
-                break;
-            case ESP_ERR_ULTRASONIC_PING_TIMEOUT:
-                printf("Ping timeout (no device found)\n");
-                break;
-            case ESP_ERR_ULTRASONIC_ECHO_TIMEOUT:
-                printf("Echo timeout (i.e. distance too big)\n");
-                break;
-            default:
-                printf("%s\n", esp_err_to_name(res));
-            }
-        }
-        else
-            printf("Distance: %0.04f cm\n", distance * 100);
+        distance = measureDistance();
 
-        vTaskDelay(pdMS_TO_TICKS(500));
+        printf("Distancia: %.2f cm\n", distance);
+
+        vTaskDelay(pdMS_TO_TICKS(1000)); // Aguardar 1 segundo
     }
 }
 
 void app_main()
 {
-    xTaskCreate(ultrasonic_test, "ultrasonic_test", configMINIMAL_STACK_SIZE * 3, NULL, 5, NULL);
+    // Configurar os pinos como GPIO de saída e entrada, respectivamente
+    gpio_pad_select_gpio(TRIGGER_PIN);
+    gpio_set_direction(TRIGGER_PIN, GPIO_MODE_OUTPUT);
+    gpio_pad_select_gpio(ECHO_PIN);
+    gpio_set_direction(ECHO_PIN, GPIO_MODE_INPUT);
+
+    // Criar a tarefa para medir a distância
+    xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
 }

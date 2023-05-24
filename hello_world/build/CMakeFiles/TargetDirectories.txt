@@ -662,3 +662,16 @@
 /home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/main/CMakeFiles/install.dir
 /home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/main/CMakeFiles/install/local.dir
 /home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/main/CMakeFiles/install/strip.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/esp_idf_lib_helpers/CMakeFiles/edit_cache.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/esp_idf_lib_helpers/CMakeFiles/rebuild_cache.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/esp_idf_lib_helpers/CMakeFiles/list_install_components.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/esp_idf_lib_helpers/CMakeFiles/install.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/esp_idf_lib_helpers/CMakeFiles/install/local.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/esp_idf_lib_helpers/CMakeFiles/install/strip.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/ultrasonic/CMakeFiles/__idf_ultrasonic.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/ultrasonic/CMakeFiles/edit_cache.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/ultrasonic/CMakeFiles/rebuild_cache.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/ultrasonic/CMakeFiles/list_install_components.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/ultrasonic/CMakeFiles/install.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/ultrasonic/CMakeFiles/install/local.dir
+/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/ultrasonic/CMakeFiles/install/strip.dir

@@ -120,6 +120,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/tinyusb/cmake_install.cmake")
   include("/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/wifi_provisioning/cmake_install.cmake")
   include("/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/main/cmake_install.cmake")
+  include("/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/esp_idf_lib_helpers/cmake_install.cmake")
+  include("/home/hss/projetos/projeto-caixa-dagua/hello_world/build/esp-idf/ultrasonic/cmake_install.cmake")
 
 endif()
 
