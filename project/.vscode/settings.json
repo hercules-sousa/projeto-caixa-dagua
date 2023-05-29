@@ -15,6 +15,7 @@
     "idf.flashType": "UART",
     "files.associations": {
         "ds18b20.h": "c",
-        "esp_system.h": "c"
+        "esp_system.h": "c",
+        "*.inc": "c"
     }
 }

@@ -68,32 +68,6 @@
 //     xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
 // }
 
-// #include <stdio.h>
-// #include "freertos/FreeRTOS.h"
-// #include "freertos/task.h"
-// #include "string.h"
-// #include "esp_system.h"
-// #include "nvs_flash.h"
-// #include "ds18b20.h"   //Include library
-// const int DS_PIN = 18; // GPIO where you connected ds18b20
-
-// void mainTask(void *pvParameters)
-// {
-//     ds18b20_init(DS_PIN);
-
-//     while (1)
-//     {
-//         printf("Temperature: %0.1f\n", ds18b20_get_temp());
-//         vTaskDelay(1000 / portTICK_PERIOD_MS);
-//     }
-// }
-
-// void app_main()
-// {
-//     nvs_flash_init();
-//     xTaskCreatePinnedToCore(&mainTask, "mainTask", 2048, NULL, 5, NULL, 0);
-// }
-
 #include <inttypes.h>
 #include <stdio.h>
 #include <freertos/FreeRTOS.h>
@@ -109,21 +83,22 @@ static const uint32_t LOOP_DELAY_MS = 500;
 
 static const char *TAG = "ds18x20_test";
 
+void print_sensor_address(ds18x20_addr_t address)
+{
+    printf("Endereço do sensor: ");
+    for (int i = 0; i < 8; i++)
+    {
+        printf("%02X ", address.bytes[i]);
+    }
+    printf("\n");
+}
+
 void ds18x20_test(void *pvParameter)
 {
     ds18x20_addr_t addrs[MAX_SENSORS];
     float temps[MAX_SENSORS];
     size_t sensor_count = 0;
 
-    // There is no special initialization required before using the ds18x20
-    // routines.  However, we make sure that the internal pull-up resistor is
-    // enabled on the GPIO pin so that one can connect up a sensor without
-    // needing an external pull-up (Note: The internal (~47k) pull-ups of the
-    // ESP do appear to work, at least for simple setups (one or two sensors
-    // connected with short leads), but do not technically meet the pull-up
-    // requirements from the ds18x20 datasheet and may not always be reliable.
-    // For a real application, a proper 4.7k external pull-up resistor is
-    // recommended instead!)
     gpio_set_pull_mode(SENSOR_GPIO, GPIO_PULLUP_ONLY);
 
     esp_err_t res;
@@ -167,20 +142,65 @@ void ds18x20_test(void *pvParameter)
             {
                 float temp_c = temps[j];
                 float temp_f = (temp_c * 1.8) + 32;
-                // Float is used in printf(). You need non-default configuration in
-                // sdkconfig for ESP8266, which is enabled by default for this
-                // example. See sdkconfig.defaults.esp8266
-                ESP_LOGI(TAG, "Sensor %08" PRIx32 "%08" PRIx32 " (%s) reports %.3f°C (%.3f°F)",
+                ds18x20_addr_t sensor_address = addrs[j];
+
+                print_sensor_address(sensor_address);
+
+                ESP_LOGI(TAG, "Sensor %08 " PRIx32 "%08" PRIx32 " (%s) reports %.3f°C (%.3f°F)",
                          (uint32_t)(addrs[j] >> 32), (uint32_t)addrs[j],
                          (addrs[j] & 0xff) == DS18B20_FAMILY_ID ? "DS18B20" : "DS18S20", temp_c, temp_f);
             }
 
-            // Wait for a little bit between each sample (note that the
-            // ds18x20_measure_and_read_multi operation already takes at
-            // least 750ms to run, so this is on top of that delay).
             vTaskDelay(pdMS_TO_TICKS(LOOP_DELAY_MS));
         }
     }
 }
 
 void app_main() { xTaskCreate(ds18x20_test, "ds18x20_test", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL); }
+
+// #include <inttypes.h>
+// #include <freertos/FreeRTOS.h>
+// #include <freertos/task.h>
+// #include <ds18x20.h>
+// #include <esp_log.h>
+// #include <esp_err.h>
+
+// static const gpio_num_t SENSOR_GPIO = 13;
+
+// // Use address of your own sensor here!
+// // You can find out the address of your sensor by running ds18x20_multi example
+// static const ds18x20_addr_t SENSOR_ADDR = 2500000003146e28;
+
+// static const char *TAG = "ds18x20_test";
+
+// void test(void *pvParameter)
+// {
+//     // Make sure that the internal pull-up resistor is enabled on the GPIO pin
+//     // so that one can connect up a sensor without needing an external pull-up.
+//     // (Note: The internal (~47k) pull-ups of the ESP do appear to work, at
+//     // least for simple setups (one or two sensors connected with short leads),
+//     // but do not technically meet the pull-up requirements from the ds18x20
+//     // datasheet and may not always be reliable. For a real application, a proper
+//     // 4.7k external pull-up resistor is recommended instead!)
+//     gpio_set_pull_mode(SENSOR_GPIO, GPIO_PULLUP_ONLY);
+
+//     float temperature;
+//     esp_err_t res;
+//     while (1)
+//     {
+//         res = ds18x20_measure_and_read(SENSOR_GPIO, SENSOR_ADDR, &temperature);
+//         if (res != ESP_OK)
+//             ESP_LOGE(TAG, "Could not read from sensor %08" PRIx32 "%08" PRIx32 ": %d (%s)",
+//                      (uint32_t)(SENSOR_ADDR >> 32), (uint32_t)SENSOR_ADDR, res, esp_err_to_name(res));
+//         else
+//             ESP_LOGI(TAG, "Sensor %08" PRIx32 "%08" PRIx32 ": %.2f°C",
+//                      (uint32_t)(SENSOR_ADDR >> 32), (uint32_t)SENSOR_ADDR, temperature);
+
+//         vTaskDelay(pdMS_TO_TICKS(1000));
+//     }
+// }
+
+// void app_main()
+// {
+//     xTaskCreate(test, TAG, configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
+// }
