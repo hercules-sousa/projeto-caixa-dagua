@@ -45,7 +45,7 @@
 //     {
 //         distance = measureDistance();
 
-//         printf("Distancia: %.2f cm\n", distance);
+//         printf("Distancia: %.2f cmm\n", distance);
 
 //         vTaskDelay(pdMS_TO_TICKS(1000)); // Aguardar 1 segundo
 //     }
@@ -68,40 +68,119 @@
 //     xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
 // }
 
+// #include <stdio.h>
+// #include "freertos/FreeRTOS.h"
+// #include "freertos/task.h"
+// #include "string.h"
+// #include "esp_system.h"
+// #include "nvs_flash.h"
+// #include "ds18b20.h"   //Include library
+// const int DS_PIN = 18; // GPIO where you connected ds18b20
+
+// void mainTask(void *pvParameters)
+// {
+//     ds18b20_init(DS_PIN);
+
+//     while (1)
+//     {
+//         printf("Temperature: %0.1f\n", ds18b20_get_temp());
+//         vTaskDelay(1000 / portTICK_PERIOD_MS);
+//     }
+// }
+
+// void app_main()
+// {
+//     nvs_flash_init();
+//     xTaskCreatePinnedToCore(&mainTask, "mainTask", 2048, NULL, 5, NULL, 0);
+// }
+
+#include <inttypes.h>
 #include <stdio.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+#include <ds18x20.h>
 #include <esp_log.h>
-// #include <owb.h>
-// #include <owb_rmt.h>
-#include <ds18b20.h>
+#include <esp_err.h>
 
-static const char *TAG = "DS18B20 Example";
+static const gpio_num_t SENSOR_GPIO = 13;
+static const int MAX_SENSORS = 1;
+static const int RESCAN_INTERVAL = 8;
+static const uint32_t LOOP_DELAY_MS = 500;
 
-void app_main(void)
+static const char *TAG = "ds18x20_test";
+
+void ds18x20_test(void *pvParameter)
 {
-    // Inicialização do barramento 1-Wire
-    OneWireBus *owb;
-    owb_rmt_driver_info rmt_driver_info;
-    owb = owb_rmt_initialize(&rmt_driver_info, GPIO_NUM_XX, RMT_CHANNEL_X, RMT_CHANNEL_X);
+    ds18x20_addr_t addrs[MAX_SENSORS];
+    float temps[MAX_SENSORS];
+    size_t sensor_count = 0;
 
-    // Inicialização do sensor DS18B20
-    DS18B20_Info *ds18b20_info = ds18b20_malloc();
-    ds18b20_init(ds18b20_info, owb);
+    // There is no special initialization required before using the ds18x20
+    // routines.  However, we make sure that the internal pull-up resistor is
+    // enabled on the GPIO pin so that one can connect up a sensor without
+    // needing an external pull-up (Note: The internal (~47k) pull-ups of the
+    // ESP do appear to work, at least for simple setups (one or two sensors
+    // connected with short leads), but do not technically meet the pull-up
+    // requirements from the ds18x20 datasheet and may not always be reliable.
+    // For a real application, a proper 4.7k external pull-up resistor is
+    // recommended instead!)
+    gpio_set_pull_mode(SENSOR_GPIO, GPIO_PULLUP_ONLY);
 
-    // Local para armazenar a temperatura
-    float temperature = 0;
-
-    // Loop principal
+    esp_err_t res;
     while (1)
     {
-        // Leitura da temperatura
-        ds18b20_convert(ds18b20_info, NULL);
-        ds18b20_wait_for_conversion(ds18b20_info);
-        ds18b20_read_temperature(ds18b20_info, &temperature);
+        // Every RESCAN_INTERVAL samples, check to see if the sensors connected
+        // to our bus have changed.
+        res = ds18x20_scan_devices(SENSOR_GPIO, addrs, MAX_SENSORS, &sensor_count);
+        if (res != ESP_OK)
+        {
+            ESP_LOGE(TAG, "Sensors scan error %d (%s)", res, esp_err_to_name(res));
+            continue;
+        }
 
-        // Exibir a temperatura
-        ESP_LOGI(TAG, "Temperatura: %.2f°C", temperature);
+        if (!sensor_count)
+        {
+            ESP_LOGW(TAG, "No sensors detected!");
+            continue;
+        }
 
-        // Delay entre as leituras
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        ESP_LOGI(TAG, "%d sensors detected", sensor_count);
+
+        // If there were more sensors found than we have space to handle,
+        // just report the first MAX_SENSORS..
+        if (sensor_count > MAX_SENSORS)
+            sensor_count = MAX_SENSORS;
+
+        // Do a number of temperature samples, and print the results.
+        for (int i = 0; i < RESCAN_INTERVAL; i++)
+        {
+            ESP_LOGI(TAG, "Measuring...");
+
+            res = ds18x20_measure_and_read_multi(SENSOR_GPIO, addrs, sensor_count, temps);
+            if (res != ESP_OK)
+            {
+                ESP_LOGE(TAG, "Sensors read error %d (%s)", res, esp_err_to_name(res));
+                continue;
+            }
+
+            for (int j = 0; j < sensor_count; j++)
+            {
+                float temp_c = temps[j];
+                float temp_f = (temp_c * 1.8) + 32;
+                // Float is used in printf(). You need non-default configuration in
+                // sdkconfig for ESP8266, which is enabled by default for this
+                // example. See sdkconfig.defaults.esp8266
+                ESP_LOGI(TAG, "Sensor %08" PRIx32 "%08" PRIx32 " (%s) reports %.3f°C (%.3f°F)",
+                         (uint32_t)(addrs[j] >> 32), (uint32_t)addrs[j],
+                         (addrs[j] & 0xff) == DS18B20_FAMILY_ID ? "DS18B20" : "DS18S20", temp_c, temp_f);
+            }
+
+            // Wait for a little bit between each sample (note that the
+            // ds18x20_measure_and_read_multi operation already takes at
+            // least 750ms to run, so this is on top of that delay).
+            vTaskDelay(pdMS_TO_TICKS(LOOP_DELAY_MS));
+        }
     }
 }
+
+void app_main() { xTaskCreate(ds18x20_test, "ds18x20_test", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL); }
