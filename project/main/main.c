@@ -1,80 +1,16 @@
-// #include <stdio.h>
-// #include <freertos/FreeRTOS.h>
-// #include <freertos/task.h>
-// #include "esp_system.h"
-// #include "driver/gpio.h"
-// #include "esp_log.h"
-// #include "esp_timer.h"
-
-// #define TRIGGER_PIN 1
-// #define ECHO_PIN 0
-
-// float measureDistance()
-// {
-//     // Enviar pulso de disparo
-//     gpio_set_level(TRIGGER_PIN, 1);
-//     ets_delay_us(10);
-//     gpio_set_level(TRIGGER_PIN, 0);
-
-//     // Aguardar o pulso de eco
-//     while (gpio_get_level(ECHO_PIN) == 0)
-//         ;
-
-//     // Iniciar a contagem do tempo
-//     uint64_t start_time = esp_timer_get_time();
-
-//     // Aguardar o fim do pulso de eco
-//     while (gpio_get_level(ECHO_PIN) == 1)
-//         ;
-
-//     // Calcular o tempo de viagem do pulso de eco
-//     uint64_t end_time = esp_timer_get_time();
-//     uint64_t travel_time = end_time - start_time;
-
-//     // Calcular a distância em centímetros
-//     float distance = (float)travel_time / 58.0;
-
-//     return distance;
-// }
-
-// void distanceTask(void *pvParameters)
-// {
-//     float distance;
-
-//     while (1)
-//     {
-//         distance = measureDistance();
-
-//         printf("Distancia: %.2f cmm\n", distance);
-
-//         vTaskDelay(pdMS_TO_TICKS(1000)); // Aguardar 1 segundo
-//     }
-// }
-
-// void setup()
-// {
-//     // Configurar os pinos como GPIO de saída e entrada, respectivamente
-//     gpio_pad_select_gpio(TRIGGER_PIN);
-//     gpio_set_direction(TRIGGER_PIN, GPIO_MODE_OUTPUT);
-//     gpio_pad_select_gpio(ECHO_PIN);
-//     gpio_set_direction(ECHO_PIN, GPIO_MODE_INPUT);
-// }
-
-// void app_main()
-// {
-//     setup();
-
-//     // Criar a tarefa para medir a distância
-//     xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
-// }
-
-#include <inttypes.h>
 #include <stdio.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
-#include <ds18x20.h>
-#include <esp_log.h>
+#include "esp_system.h"
+#include "driver/gpio.h"
+#include "esp_log.h"
+#include "esp_timer.h"
 #include <esp_err.h>
+#include <ds18x20.h>
+#include <inttypes.h>
+
+#define TRIGGER_PIN 1
+#define ECHO_PIN 0
 
 static const gpio_num_t SENSOR_GPIO = 13;
 static const int MAX_SENSORS = 1;
@@ -83,14 +19,55 @@ static const uint32_t LOOP_DELAY_MS = 500;
 
 static const char *TAG = "ds18x20_test";
 
-void print_sensor_address(ds18x20_addr_t address)
+float measureDistance()
 {
-    printf("Endereço do sensor: ");
-    for (int i = 0; i < 8; i++)
+    // Enviar pulso de disparo
+    gpio_set_level(TRIGGER_PIN, 1);
+    ets_delay_us(10);
+    gpio_set_level(TRIGGER_PIN, 0);
+
+    // Aguardar o pulso de eco
+    while (gpio_get_level(ECHO_PIN) == 0)
+        ;
+
+    // Iniciar a contagem do tempo
+    uint64_t start_time = esp_timer_get_time();
+
+    // Aguardar o fim do pulso de eco
+    while (gpio_get_level(ECHO_PIN) == 1)
+        ;
+
+    // Calcular o tempo de viagem do pulso de eco
+    uint64_t end_time = esp_timer_get_time();
+    uint64_t travel_time = end_time - start_time;
+
+    // Calcular a distância em centímetros
+    float distance = (float)travel_time / 58.0;
+
+    return distance;
+}
+
+void distanceTask(void *pvParameters)
+{
+    float distance;
+
+    while (1)
     {
-        printf("%02X ", address.bytes[i]);
+        distance = measureDistance();
+
+        ESP_LOGI(TAG, "Distância = %.2f", distance);
+
+        vTaskDelay(pdMS_TO_TICKS(1000)); // Aguardar 1 segundo
     }
-    printf("\n");
+}
+
+void hcsr04_setup()
+{
+    // Configurar os pinos como GPIO de saída e entrada, respectivamente
+    gpio_pad_select_gpio(TRIGGER_PIN);
+    gpio_set_direction(TRIGGER_PIN, GPIO_MODE_OUTPUT);
+    gpio_pad_select_gpio(ECHO_PIN);
+    gpio_set_direction(ECHO_PIN, GPIO_MODE_INPUT);
 }
 
 void ds18x20_test(void *pvParameter)
@@ -129,7 +106,7 @@ void ds18x20_test(void *pvParameter)
         // Do a number of temperature samples, and print the results.
         for (int i = 0; i < RESCAN_INTERVAL; i++)
         {
-            ESP_LOGI(TAG, "Measuring...");
+            // ESP_LOGI(TAG, "Measuring...");
 
             res = ds18x20_measure_and_read_multi(SENSOR_GPIO, addrs, sensor_count, temps);
             if (res != ESP_OK)
@@ -141,14 +118,13 @@ void ds18x20_test(void *pvParameter)
             for (int j = 0; j < sensor_count; j++)
             {
                 float temp_c = temps[j];
-                float temp_f = (temp_c * 1.8) + 32;
                 ds18x20_addr_t sensor_address = addrs[j];
 
-                print_sensor_address(sensor_address);
+                // ESP_LOGI(TAG, "Sensor %08 " PRIx32 "%08" PRIx32 " (%s) reports %.3f°C (%.3f°F)",
+                //          (uint32_t)(addrs[j] >> 32), (uint32_t)addrs[j],
+                //          (addrs[j] & 0xff) == DS18B20_FAMILY_ID ? "DS18B20" : "DS18S20", temp_c, temp_f);
 
-                ESP_LOGI(TAG, "Sensor %08 " PRIx32 "%08" PRIx32 " (%s) reports %.3f°C (%.3f°F)",
-                         (uint32_t)(addrs[j] >> 32), (uint32_t)addrs[j],
-                         (addrs[j] & 0xff) == DS18B20_FAMILY_ID ? "DS18B20" : "DS18S20", temp_c, temp_f);
+                ESP_LOGI(TAG, "Temperatura = %.3f°C", temp_c);
             }
 
             vTaskDelay(pdMS_TO_TICKS(LOOP_DELAY_MS));
@@ -156,7 +132,13 @@ void ds18x20_test(void *pvParameter)
     }
 }
 
-void app_main() { xTaskCreate(ds18x20_test, "ds18x20_test", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL); }
+void app_main()
+{
+    hcsr04_setup();
+
+    xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
+    xTaskCreate(ds18x20_test, "ds18x20_test", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
+}
 
 // #include <inttypes.h>
 // #include <freertos/FreeRTOS.h>
@@ -178,7 +160,7 @@ void app_main() { xTaskCreate(ds18x20_test, "ds18x20_test", configMINIMAL_STACK_
 //     // Make sure that the internal pull-up resistor is enabled on the GPIO pin
 //     // so that one can connect up a sensor without needing an external pull-up.
 //     // (Note: The internal (~47k) pull-ups of the ESP do appear to work, at
-//     // least for simple setups (one or two sensors connected with short leads),
+//     // least for simple hcsr04_setups (one or two sensors connected with short leads),
 //     // but do not technically meet the pull-up requirements from the ds18x20
 //     // datasheet and may not always be reliable. For a real application, a proper
 //     // 4.7k external pull-up resistor is recommended instead!)
