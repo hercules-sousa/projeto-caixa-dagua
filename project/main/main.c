@@ -17,7 +17,7 @@ static const int MAX_SENSORS = 1;
 static const int RESCAN_INTERVAL = 8;
 static const uint32_t LOOP_DELAY_MS = 500;
 
-static const char *TAG = "ds18x20_test";
+static const char *TAG = "measure_temperature";
 
 float measureDistance()
 {
@@ -70,7 +70,7 @@ void hcsr04_setup()
     gpio_set_direction(ECHO_PIN, GPIO_MODE_INPUT);
 }
 
-void ds18x20_test(void *pvParameter)
+void measure_temperature(void *pvParameter)
 {
     ds18x20_addr_t addrs[MAX_SENSORS];
     float temps[MAX_SENSORS];
@@ -137,7 +137,7 @@ void app_main()
     hcsr04_setup();
 
     xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
-    xTaskCreate(ds18x20_test, "ds18x20_test", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
+    xTaskCreate(measure_temperature, "measure_temperature", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
 }
 
 // #include <inttypes.h>
@@ -153,7 +153,7 @@ void app_main()
 // // You can find out the address of your sensor by running ds18x20_multi example
 // static const ds18x20_addr_t SENSOR_ADDR = 2500000003146e28;
 
-// static const char *TAG = "ds18x20_test";
+// static const char *TAG = "measure_temperature";
 
 // void test(void *pvParameter)
 // {
