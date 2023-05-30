@@ -19,6 +19,8 @@
         "*.inc": "c",
         "esp_err.h": "c",
         "esp_log.h": "c",
-        "ds18x20.h": "c"
+        "ds18x20.h": "c",
+        "stdio.h": "c",
+        "gpio.h": "c"
     }
 }
