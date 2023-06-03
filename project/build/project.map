@@ -8148,7 +8148,7 @@ END GROUP
                 0x000000003fc8cb60                _bss_end = ABSOLUTE (.)
                 0x0000000000000001                ASSERT (((_bss_end - ORIGIN (dram0_0_seg)) <= LENGTH (dram0_0_seg)), DRAM segment data does not fit.)
 
-.flash.text     0x0000000042000020    0x13eda
+.flash.text     0x0000000042000020    0x13ef4
                 0x0000000042000020                _stext = .
                 0x0000000042000020                _instruction_reserved_start = ABSOLUTE (.)
                 0x0000000042000020                _text_start = ABSOLUTE (.)
@@ -8698,492 +8698,492 @@ END GROUP
                 0x00000000420061c2       0x2e esp-idf/main/libmain.a(main.c.obj)
                 0x00000000420061c2                hcsr04_setup
  .text.app_main
-                0x00000000420061f0       0x66 esp-idf/main/libmain.a(main.c.obj)
+                0x00000000420061f0       0x80 esp-idf/main/libmain.a(main.c.obj)
                 0x00000000420061f0                app_main
  .text.ds18x20_measure
-                0x0000000042006256       0x7a esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
-                0x0000000042006256                ds18x20_measure
+                0x0000000042006270       0x7a esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+                0x0000000042006270                ds18x20_measure
  .text.ds18x20_read_scratchpad
-                0x00000000420062d0       0xe8 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
-                0x00000000420062d0                ds18x20_read_scratchpad
+                0x00000000420062ea       0xe8 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+                0x00000000420062ea                ds18x20_read_scratchpad
  .text.ds18b20_read_temperature
-                0x00000000420063b8       0x7a esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
-                0x00000000420063b8                ds18b20_read_temperature
+                0x00000000420063d2       0x7a esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+                0x00000000420063d2                ds18b20_read_temperature
  .text.ds18s20_read_temperature
-                0x0000000042006432       0xa6 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
-                0x0000000042006432                ds18s20_read_temperature
+                0x000000004200644c       0xa6 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+                0x000000004200644c                ds18s20_read_temperature
  .text.ds18x20_read_temperature
-                0x00000000420064d8       0x20 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
-                0x00000000420064d8                ds18x20_read_temperature
+                0x00000000420064f2       0x20 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+                0x00000000420064f2                ds18x20_read_temperature
  .text.ds18x20_scan_devices
-                0x00000000420064f8       0x76 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
-                0x00000000420064f8                ds18x20_scan_devices
+                0x0000000042006512       0x76 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+                0x0000000042006512                ds18x20_scan_devices
  .text.ds18x20_read_temp_multi
-                0x000000004200656e       0x5a esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
-                0x000000004200656e                ds18x20_read_temp_multi
+                0x0000000042006588       0x5a esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+                0x0000000042006588                ds18x20_read_temp_multi
  .text.ds18x20_measure_and_read_multi
-                0x00000000420065c8       0x4c esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
-                0x00000000420065c8                ds18x20_measure_and_read_multi
+                0x00000000420065e2       0x4c esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+                0x00000000420065e2                ds18x20_measure_and_read_multi
  .text.setup_pin
-                0x0000000042006614       0x26 esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x000000004200662e       0x26 esp-idf/onewire/libonewire.a(onewire.c.obj)
  .text._onewire_read_bit
-                0x000000004200663a       0x96 esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x0000000042006654       0x96 esp-idf/onewire/libonewire.a(onewire.c.obj)
  .text._onewire_write_bit
-                0x00000000420066d0       0xb4 esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x00000000420066ea       0xb4 esp-idf/onewire/libonewire.a(onewire.c.obj)
  .text.onewire_reset
-                0x0000000042006784       0xda esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x0000000042006784                onewire_reset
+                0x000000004200679e       0xda esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x000000004200679e                onewire_reset
  .text.onewire_write
-                0x000000004200685e       0x38 esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x000000004200685e                onewire_write
+                0x0000000042006878       0x38 esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x0000000042006878                onewire_write
  .text.onewire_read
-                0x0000000042006896       0x3a esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x0000000042006896                onewire_read
+                0x00000000420068b0       0x3a esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x00000000420068b0                onewire_read
  .text.onewire_select
-                0x00000000420068d0       0x5c esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x00000000420068d0                onewire_select
+                0x00000000420068ea       0x5c esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x00000000420068ea                onewire_select
  .text.onewire_skip_rom
-                0x000000004200692c       0x12 esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x000000004200692c                onewire_skip_rom
+                0x0000000042006946       0x12 esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x0000000042006946                onewire_skip_rom
  .text.onewire_power
-                0x000000004200693e       0x5c esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x000000004200693e                onewire_power
+                0x0000000042006958       0x5c esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x0000000042006958                onewire_power
  .text.onewire_depower
-                0x000000004200699a       0x10 esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x000000004200699a                onewire_depower
+                0x00000000420069b4       0x10 esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x00000000420069b4                onewire_depower
  .text.onewire_search_start
-                0x00000000420069aa       0x2a esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x00000000420069aa                onewire_search_start
+                0x00000000420069c4       0x2a esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x00000000420069c4                onewire_search_start
  .text.onewire_search_next
-                0x00000000420069d4      0x138 esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x00000000420069d4                onewire_search_next
+                0x00000000420069ee      0x138 esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x00000000420069ee                onewire_search_next
  .text.onewire_crc8
-                0x0000000042006b0c       0x2c esp-idf/onewire/libonewire.a(onewire.c.obj)
-                0x0000000042006b0c                onewire_crc8
+                0x0000000042006b26       0x2c esp-idf/onewire/libonewire.a(onewire.c.obj)
+                0x0000000042006b26                onewire_crc8
  .text.esp_efuse_read_field_blob
-                0x0000000042006b38       0x7e esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
-                0x0000000042006b38                esp_efuse_read_field_blob
+                0x0000000042006b52       0x7e esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
+                0x0000000042006b52                esp_efuse_read_field_blob
  .text.esp_efuse_get_field_size
-                0x0000000042006bb6       0x20 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
-                0x0000000042006bb6                esp_efuse_get_field_size
+                0x0000000042006bd0       0x20 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
+                0x0000000042006bd0                esp_efuse_get_field_size
  .text.esp_efuse_check_errors
-                0x0000000042006bd6        0xc esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
-                0x0000000042006bd6                esp_efuse_check_errors
+                0x0000000042006bf0        0xc esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
+                0x0000000042006bf0                esp_efuse_check_errors
  .text.get_mask
-                0x0000000042006be2       0x1c esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006bfc       0x1c esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .text.get_reg_num
-                0x0000000042006bfe       0x26 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006c18       0x26 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .text.get_starting_bit_num_in_reg
-                0x0000000042006c24       0x14 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006c3e       0x14 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .text.get_count_bits_in_reg
-                0x0000000042006c38       0x34 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006c52       0x34 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .text.check_range_of_bits
-                0x0000000042006c6c       0x12 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006c86       0x12 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .text.esp_efuse_utility_process
-                0x0000000042006c7e      0x190 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
-                0x0000000042006c7e                esp_efuse_utility_process
+                0x0000000042006c98      0x190 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006c98                esp_efuse_utility_process
  .text.esp_efuse_utility_get_number_of_items
-                0x0000000042006e0e       0x10 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
-                0x0000000042006e0e                esp_efuse_utility_get_number_of_items
+                0x0000000042006e28       0x10 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006e28                esp_efuse_utility_get_number_of_items
  .text.esp_efuse_utility_read_reg
-                0x0000000042006e1e       0x76 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
-                0x0000000042006e1e                esp_efuse_utility_read_reg
+                0x0000000042006e38       0x76 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006e38                esp_efuse_utility_read_reg
  .text.esp_efuse_utility_fill_buff
-                0x0000000042006e94       0xec esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
-                0x0000000042006e94                esp_efuse_utility_fill_buff
+                0x0000000042006eae       0xec esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006eae                esp_efuse_utility_fill_buff
  .text.esp_efuse_utility_count_once
-                0x0000000042006f80       0x58 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
-                0x0000000042006f80                esp_efuse_utility_count_once
+                0x0000000042006f9a       0x58 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006f9a                esp_efuse_utility_count_once
  .text.esp_efuse_set_timing
-                0x0000000042006fd8       0x18 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042006ff2       0x18 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .text.efuse_read
-                0x0000000042006ff0       0x3a esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x000000004200700a       0x3a esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .text.esp_efuse_utility_check_errors
-                0x000000004200702a       0x92 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
-                0x000000004200702a                esp_efuse_utility_check_errors
+                0x0000000042007044       0x92 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+                0x0000000042007044                esp_efuse_utility_check_errors
  .text.gpio_input_enable
-                0x00000000420070bc       0x7e esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x00000000420070d6       0x7e esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_input_disable
-                0x000000004200713a       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007154       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_output_disable
-                0x00000000420071b6       0x9a esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x00000000420071d0       0x9a esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_od_enable
-                0x0000000042007250       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x000000004200726a       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_od_disable
-                0x00000000420072cc       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x00000000420072e6       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_sleep_input_enable
-                0x0000000042007348       0x7e esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007362       0x7e esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_sleep_input_disable
-                0x00000000420073c6       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x00000000420073e0       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_sleep_output_enable
-                0x0000000042007442       0x7e esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x000000004200745c       0x7e esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_sleep_output_disable
-                0x00000000420074c0       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x00000000420074da       0x7c esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_sleep_pulldown_en
-                0x000000004200753c       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007556       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_sleep_pullup_en
-                0x00000000420075d0       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x00000000420075ea       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_sleep_pulldown_dis
-                0x0000000042007664       0x92 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x000000004200767e       0x92 esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_sleep_pullup_dis
-                0x00000000420076f6       0x92 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007710       0x92 esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_output_enable
-                0x0000000042007788       0x98 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x00000000420077a2       0x98 esp-idf/driver/libdriver.a(gpio.c.obj)
  .text.gpio_pullup_en
-                0x0000000042007820       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007820                gpio_pullup_en
+                0x000000004200783a       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x000000004200783a                gpio_pullup_en
  .text.gpio_pullup_dis
-                0x00000000420078b4       0xae esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x00000000420078b4                gpio_pullup_dis
+                0x00000000420078ce       0xae esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x00000000420078ce                gpio_pullup_dis
  .text.gpio_pulldown_en
-                0x0000000042007962       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007962                gpio_pulldown_en
+                0x000000004200797c       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x000000004200797c                gpio_pulldown_en
  .text.gpio_pulldown_dis
-                0x00000000420079f6       0x92 esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x00000000420079f6                gpio_pulldown_dis
+                0x0000000042007a10       0x92 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007a10                gpio_pulldown_dis
  .text.gpio_set_level
-                0x0000000042007a88       0xa8 esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007a88                gpio_set_level
+                0x0000000042007aa2       0xa8 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007aa2                gpio_set_level
  .text.gpio_get_level
-                0x0000000042007b30       0x18 esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007b30                gpio_get_level
+                0x0000000042007b4a       0x18 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007b4a                gpio_get_level
  .text.gpio_set_pull_mode
-                0x0000000042007b48      0x13e esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007b48                gpio_set_pull_mode
+                0x0000000042007b62      0x13e esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007b62                gpio_set_pull_mode
  .text.gpio_set_direction
-                0x0000000042007c86       0xb0 esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007c86                gpio_set_direction
+                0x0000000042007ca0       0xb0 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007ca0                gpio_set_direction
  .text.gpio_sleep_set_direction
-                0x0000000042007d36       0x9c esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007d36                gpio_sleep_set_direction
+                0x0000000042007d50       0x9c esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007d50                gpio_sleep_set_direction
  .text.gpio_sleep_set_pull_mode
-                0x0000000042007dd2      0x13e esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007dd2                gpio_sleep_set_pull_mode
+                0x0000000042007dec      0x13e esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007dec                gpio_sleep_set_pull_mode
  .text.gpio_sleep_sel_en
-                0x0000000042007f10       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007f10                gpio_sleep_sel_en
+                0x0000000042007f2a       0x94 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007f2a                gpio_sleep_sel_en
  .text.gpio_sleep_sel_dis
-                0x0000000042007fa4       0x92 esp-idf/driver/libdriver.a(gpio.c.obj)
-                0x0000000042007fa4                gpio_sleep_sel_dis
+                0x0000000042007fbe       0x92 esp-idf/driver/libdriver.a(gpio.c.obj)
+                0x0000000042007fbe                gpio_sleep_sel_dis
  .text.periph_ll_get_clk_en_reg
-                0x0000000042008036       0x32 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
+                0x0000000042008050       0x32 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
  .text.periph_ll_get_rst_en_reg
-                0x0000000042008068       0x32 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
+                0x0000000042008082       0x32 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
  .text.periph_module_enable
-                0x000000004200809a      0x310 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
-                0x000000004200809a                periph_module_enable
+                0x00000000420080b4      0x310 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
+                0x00000000420080b4                periph_module_enable
  .text.uart_pattern_queue_update
-                0x00000000420083aa       0x50 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x00000000420083c4       0x50 esp-idf/driver/libdriver.a(uart.c.obj)
  .text.uart_reenable_intr_mask
-                0x00000000420083fa       0x90 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x0000000042008414       0x90 esp-idf/driver/libdriver.a(uart.c.obj)
  .text.uart_set_word_length
-                0x000000004200848a       0xb2 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x000000004200848a                uart_set_word_length
+                0x00000000420084a4       0xb2 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x00000000420084a4                uart_set_word_length
  .text.uart_get_word_length
-                0x000000004200853c       0x56 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x000000004200853c                uart_get_word_length
+                0x0000000042008556       0x56 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x0000000042008556                uart_get_word_length
  .text.uart_set_stop_bits
-                0x0000000042008592       0xb2 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x0000000042008592                uart_set_stop_bits
+                0x00000000420085ac       0xb2 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x00000000420085ac                uart_set_stop_bits
  .text.uart_get_stop_bits
-                0x0000000042008644       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x0000000042008644                uart_get_stop_bits
+                0x000000004200865e       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x000000004200865e                uart_get_stop_bits
  .text.uart_set_parity
-                0x00000000420086b8       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x00000000420086b8                uart_set_parity
+                0x00000000420086d2       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x00000000420086d2                uart_set_parity
  .text.uart_get_parity
-                0x000000004200872c       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x000000004200872c                uart_get_parity
+                0x0000000042008746       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x0000000042008746                uart_get_parity
  .text.uart_set_baudrate
-                0x00000000420087a0       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x00000000420087a0                uart_set_baudrate
+                0x00000000420087ba       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x00000000420087ba                uart_set_baudrate
  .text.uart_get_baudrate
-                0x0000000042008814       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x0000000042008814                uart_get_baudrate
+                0x000000004200882e       0x74 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x000000004200882e                uart_get_baudrate
  .text.uart_wait_tx_done
-                0x0000000042008888      0x200 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x0000000042008888                uart_wait_tx_done
+                0x00000000420088a2      0x200 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x00000000420088a2                uart_wait_tx_done
  .text.uart_get_buffered_data_len
-                0x0000000042008a88       0xc2 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x0000000042008a88                uart_get_buffered_data_len
+                0x0000000042008aa2       0xc2 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x0000000042008aa2                uart_get_buffered_data_len
  .text.uart_flush_input
-                0x0000000042008b4a      0x252 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x0000000042008b4a                uart_flush_input
-                0x0000000042008b4a                uart_flush
+                0x0000000042008b64      0x252 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x0000000042008b64                uart_flush_input
+                0x0000000042008b64                uart_flush
  .text.uart_is_driver_installed
-                0x0000000042008d9c       0x22 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x0000000042008d9c                uart_is_driver_installed
+                0x0000000042008db6       0x22 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x0000000042008db6                uart_is_driver_installed
  .text.uart_set_select_notif_callback
-                0x0000000042008dbe       0x1e esp-idf/driver/libdriver.a(uart.c.obj)
-                0x0000000042008dbe                uart_set_select_notif_callback
+                0x0000000042008dd8       0x1e esp-idf/driver/libdriver.a(uart.c.obj)
+                0x0000000042008dd8                uart_set_select_notif_callback
  .text.uart_get_selectlock
-                0x0000000042008ddc        0x6 esp-idf/driver/libdriver.a(uart.c.obj)
-                0x0000000042008ddc                uart_get_selectlock
+                0x0000000042008df6        0x6 esp-idf/driver/libdriver.a(uart.c.obj)
+                0x0000000042008df6                uart_get_selectlock
  .text.bootloader_init_mem
-                0x0000000042008de2        0xe esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
-                0x0000000042008de2                bootloader_init_mem
+                0x0000000042008dfc        0xe esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
+                0x0000000042008dfc                bootloader_init_mem
  .text.bootloader_flash_update_id
-                0x0000000042008df0       0x20 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32c3.c.obj)
-                0x0000000042008df0                bootloader_flash_update_id
+                0x0000000042008e0a       0x20 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32c3.c.obj)
+                0x0000000042008e0a                bootloader_flash_update_id
  .text.spi_flash_init_lock
-                0x0000000042008e10        0x2 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
-                0x0000000042008e10                spi_flash_init_lock
+                0x0000000042008e2a        0x2 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
+                0x0000000042008e2a                spi_flash_init_lock
  .text.spi_flash_op_lock
-                0x0000000042008e12       0x12 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
-                0x0000000042008e12                spi_flash_op_lock
+                0x0000000042008e2c       0x12 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
+                0x0000000042008e2c                spi_flash_op_lock
  .text.spi_flash_op_unlock
-                0x0000000042008e24       0x12 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
-                0x0000000042008e24                spi_flash_op_unlock
+                0x0000000042008e3e       0x12 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
+                0x0000000042008e3e                spi_flash_op_unlock
  .text.spi_flash_cache2phys
-                0x0000000042008e36       0xb6 esp-idf/spi_flash/libspi_flash.a(flash_mmap.c.obj)
-                0x0000000042008e36                spi_flash_cache2phys
+                0x0000000042008e50       0xb6 esp-idf/spi_flash/libspi_flash.a(flash_mmap.c.obj)
+                0x0000000042008e50                spi_flash_cache2phys
  .text.is_safe_write_address
-                0x0000000042008eec       0x18 esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
+                0x0000000042008f06       0x18 esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
  .text.spi_flash_init
-                0x0000000042008f04        0xe esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
-                0x0000000042008f04                spi_flash_init
+                0x0000000042008f1e        0xe esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
+                0x0000000042008f1e                spi_flash_init
  .text.esp_mspi_get_io
-                0x0000000042008f12       0x9c esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
-                0x0000000042008f12                esp_mspi_get_io
+                0x0000000042008f2c       0x9c esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
+                0x0000000042008f2c                esp_mspi_get_io
  .text.esp_flash_chip_driver_initialized
-                0x0000000042008fae        0xc esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
-                0x0000000042008fae                esp_flash_chip_driver_initialized
+                0x0000000042008fc8        0xc esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
+                0x0000000042008fc8                esp_flash_chip_driver_initialized
  .text.check_chip_pointer_default
-                0x0000000042008fba       0x32 esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
+                0x0000000042008fd4       0x32 esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
  .text.esp_flash_read_chip_id
-                0x0000000042008fec       0x14 esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
-                0x0000000042008fec                esp_flash_read_chip_id
+                0x0000000042009006       0x14 esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
+                0x0000000042009006                esp_flash_read_chip_id
  .text.esp_flash_init_default_chip
-                0x0000000042009000      0x108 esp-idf/spi_flash/libspi_flash.a(esp_flash_spi_init.c.obj)
-                0x0000000042009000                esp_flash_init_default_chip
+                0x000000004200901a      0x108 esp-idf/spi_flash/libspi_flash.a(esp_flash_spi_init.c.obj)
+                0x000000004200901a                esp_flash_init_default_chip
  .text.esp_flash_app_init
-                0x0000000042009108       0x10 esp-idf/spi_flash/libspi_flash.a(esp_flash_spi_init.c.obj)
-                0x0000000042009108                esp_flash_app_init
+                0x0000000042009122       0x10 esp-idf/spi_flash/libspi_flash.a(esp_flash_spi_init.c.obj)
+                0x0000000042009122                esp_flash_app_init
  .text.esp_flash_app_enable_os_functions
-                0x0000000042009118       0x26 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_app.c.obj)
-                0x0000000042009118                esp_flash_app_enable_os_functions
+                0x0000000042009132       0x26 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_app.c.obj)
+                0x0000000042009132                esp_flash_app_enable_os_functions
  .text.load_partitions
-                0x000000004200913e      0x1f2 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+                0x0000000042009158      0x1f2 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
  .text.ensure_partitions_loaded
-                0x0000000042009330       0x7e esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+                0x000000004200934a       0x7e esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
  .text.iterator_create
-                0x00000000420093ae       0x3c esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+                0x00000000420093c8       0x3c esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
  .text.esp_partition_iterator_release
-                0x00000000420093ea       0x12 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
-                0x00000000420093ea                esp_partition_iterator_release
+                0x0000000042009404       0x12 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+                0x0000000042009404                esp_partition_iterator_release
  .text.esp_partition_next
-                0x00000000420093fc       0xb6 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
-                0x00000000420093fc                esp_partition_next
+                0x0000000042009416       0xb6 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+                0x0000000042009416                esp_partition_next
  .text.esp_partition_find
-                0x00000000420094b2       0x44 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
-                0x00000000420094b2                esp_partition_find
+                0x00000000420094cc       0x44 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+                0x00000000420094cc                esp_partition_find
  .text.esp_partition_get
-                0x00000000420094f6       0x2e esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
-                0x00000000420094f6                esp_partition_get
+                0x0000000042009510       0x2e esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+                0x0000000042009510                esp_partition_get
  .text.esp_partition_main_flash_region_safe
-                0x0000000042009524       0x50 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
-                0x0000000042009524                esp_partition_main_flash_region_safe
+                0x000000004200953e       0x50 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+                0x000000004200953e                esp_partition_main_flash_region_safe
  .text.esp_crosscore_int_init
-                0x0000000042009574       0x6a esp-idf/esp_system/libesp_system.a(crosscore_int.c.obj)
-                0x0000000042009574                esp_crosscore_int_init
+                0x000000004200958e       0x6a esp-idf/esp_system/libesp_system.a(crosscore_int.c.obj)
+                0x000000004200958e                esp_crosscore_int_init
  .text.esp_vApplicationIdleHook
-                0x00000000420095de       0x42 esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
-                0x00000000420095de                esp_vApplicationIdleHook
+                0x00000000420095f8       0x42 esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
+                0x00000000420095f8                esp_vApplicationIdleHook
  .text.esp_register_freertos_idle_hook_for_cpu
-                0x0000000042009620       0x70 esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
-                0x0000000042009620                esp_register_freertos_idle_hook_for_cpu
+                0x000000004200963a       0x70 esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
+                0x000000004200963a                esp_register_freertos_idle_hook_for_cpu
  .text.esp_register_freertos_tick_hook_for_cpu
-                0x0000000042009690       0x70 esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
-                0x0000000042009690                esp_register_freertos_tick_hook_for_cpu
+                0x00000000420096aa       0x70 esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
+                0x00000000420096aa                esp_register_freertos_tick_hook_for_cpu
  .text.esp_int_wdt_init
-                0x0000000042009700       0x80 esp-idf/esp_system/libesp_system.a(int_wdt.c.obj)
-                0x0000000042009700                esp_int_wdt_init
+                0x000000004200971a       0x80 esp-idf/esp_system/libesp_system.a(int_wdt.c.obj)
+                0x000000004200971a                esp_int_wdt_init
  .text.esp_int_wdt_cpu_init
-                0x0000000042009780       0x4c esp-idf/esp_system/libesp_system.a(int_wdt.c.obj)
-                0x0000000042009780                esp_int_wdt_cpu_init
+                0x000000004200979a       0x4c esp-idf/esp_system/libesp_system.a(int_wdt.c.obj)
+                0x000000004200979a                esp_int_wdt_cpu_init
  .text.find_task_in_twdt_list
-                0x00000000420097cc       0x30 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+                0x00000000420097e6       0x30 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
  .text.reset_hw_timer
-                0x00000000420097fc       0x4a esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+                0x0000000042009816       0x4a esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
  .text.esp_task_wdt_isr_user_handler
-                0x0000000042009846        0x2 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
-                0x0000000042009846                esp_task_wdt_isr_user_handler
+                0x0000000042009860        0x2 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+                0x0000000042009860                esp_task_wdt_isr_user_handler
  .text.task_wdt_isr
-                0x0000000042009848      0x1e0 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+                0x0000000042009862      0x1e0 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
  .text.esp_task_wdt_init
-                0x0000000042009a28      0x1a2 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
-                0x0000000042009a28                esp_task_wdt_init
+                0x0000000042009a42      0x1a2 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+                0x0000000042009a42                esp_task_wdt_init
  .text.esp_task_wdt_add
-                0x0000000042009bca      0x102 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
-                0x0000000042009bca                esp_task_wdt_add
+                0x0000000042009be4      0x102 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+                0x0000000042009be4                esp_task_wdt_add
  .text.esp_task_wdt_reset
-                0x0000000042009ccc       0x66 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
-                0x0000000042009ccc                esp_task_wdt_reset
+                0x0000000042009ce6       0x66 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+                0x0000000042009ce6                esp_task_wdt_reset
  .text.idle_hook_cb
-                0x0000000042009d32       0x10 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+                0x0000000042009d4c       0x10 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
  .text.uart_hal_set_baudrate
-                0x0000000042009d42       0x9c esp-idf/hal/libhal.a(uart_hal.c.obj)
-                0x0000000042009d42                uart_hal_set_baudrate
+                0x0000000042009d5c       0x9c esp-idf/hal/libhal.a(uart_hal.c.obj)
+                0x0000000042009d5c                uart_hal_set_baudrate
  .text.uart_hal_get_baudrate
-                0x0000000042009dde       0x6c esp-idf/hal/libhal.a(uart_hal.c.obj)
-                0x0000000042009dde                uart_hal_get_baudrate
+                0x0000000042009df8       0x6c esp-idf/hal/libhal.a(uart_hal.c.obj)
+                0x0000000042009df8                uart_hal_get_baudrate
  .text.uart_hal_set_stop_bits
-                0x0000000042009e4a       0x12 esp-idf/hal/libhal.a(uart_hal.c.obj)
-                0x0000000042009e4a                uart_hal_set_stop_bits
+                0x0000000042009e64       0x12 esp-idf/hal/libhal.a(uart_hal.c.obj)
+                0x0000000042009e64                uart_hal_set_stop_bits
  .text.uart_hal_get_stop_bits
-                0x0000000042009e5c        0xc esp-idf/hal/libhal.a(uart_hal.c.obj)
-                0x0000000042009e5c                uart_hal_get_stop_bits
+                0x0000000042009e76        0xc esp-idf/hal/libhal.a(uart_hal.c.obj)
+                0x0000000042009e76                uart_hal_get_stop_bits
  .text.uart_hal_set_data_bit_num
-                0x0000000042009e68       0x10 esp-idf/hal/libhal.a(uart_hal.c.obj)
-                0x0000000042009e68                uart_hal_set_data_bit_num
+                0x0000000042009e82       0x10 esp-idf/hal/libhal.a(uart_hal.c.obj)
+                0x0000000042009e82                uart_hal_set_data_bit_num
  .text.uart_hal_get_data_bit_num
-                0x0000000042009e78        0xc esp-idf/hal/libhal.a(uart_hal.c.obj)
-                0x0000000042009e78                uart_hal_get_data_bit_num
+                0x0000000042009e92        0xc esp-idf/hal/libhal.a(uart_hal.c.obj)
+                0x0000000042009e92                uart_hal_get_data_bit_num
  .text.uart_hal_set_parity
-                0x0000000042009e84       0x20 esp-idf/hal/libhal.a(uart_hal.c.obj)
-                0x0000000042009e84                uart_hal_set_parity
+                0x0000000042009e9e       0x20 esp-idf/hal/libhal.a(uart_hal.c.obj)
+                0x0000000042009e9e                uart_hal_set_parity
  .text.uart_hal_get_parity
-                0x0000000042009ea4       0x1c esp-idf/hal/libhal.a(uart_hal.c.obj)
-                0x0000000042009ea4                uart_hal_get_parity
+                0x0000000042009ebe       0x1c esp-idf/hal/libhal.a(uart_hal.c.obj)
+                0x0000000042009ebe                uart_hal_get_parity
  .text.spi_flash_hal_init
-                0x0000000042009ec0      0x10a esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
-                0x0000000042009ec0                spi_flash_hal_init
+                0x0000000042009eda      0x10a esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
+                0x0000000042009eda                spi_flash_hal_init
  .text.spi_flash_hal_supports_direct_write
-                0x0000000042009fca       0x28 esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
-                0x0000000042009fca                spi_flash_hal_supports_direct_write
+                0x0000000042009fe4       0x28 esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
+                0x0000000042009fe4                spi_flash_hal_supports_direct_write
  .text.spi_flash_hal_supports_direct_read
-                0x0000000042009ff2       0x28 esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
-                0x0000000042009ff2                spi_flash_hal_supports_direct_read
+                0x000000004200a00c       0x28 esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
+                0x000000004200a00c                spi_flash_hal_supports_direct_read
  .text.is_interrupt_number_reserved
-                0x000000004200a01a       0x3e esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
+                0x000000004200a034       0x3e esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
  .text.interrupt_controller_hal_desc_level
-                0x000000004200a058        0x4 esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
-                0x000000004200a058                interrupt_controller_hal_desc_level
+                0x000000004200a072        0x4 esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
+                0x000000004200a072                interrupt_controller_hal_desc_level
  .text.interrupt_controller_hal_desc_flags
-                0x000000004200a05c        0xe esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
-                0x000000004200a05c                interrupt_controller_hal_desc_flags
+                0x000000004200a076        0xe esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
+                0x000000004200a076                interrupt_controller_hal_desc_flags
  .text.esp_cpu_configure_region_protection
-                0x000000004200a06a       0xfa esp-idf/esp_hw_support/libesp_hw_support.a(cpu_util_esp32c3.c.obj)
-                0x000000004200a06a                esp_cpu_configure_region_protection
+                0x000000004200a084       0xfa esp-idf/esp_hw_support/libesp_hw_support.a(cpu_util_esp32c3.c.obj)
+                0x000000004200a084                esp_cpu_configure_region_protection
  .text.riscv_decode_offset_from_jal_instruction
-                0x000000004200a164       0x4a esp-idf/riscv/libriscv.a(instruction_decode.c.obj)
-                0x000000004200a164                riscv_decode_offset_from_jal_instruction
+                0x000000004200a17e       0x4a esp-idf/riscv/libriscv.a(instruction_decode.c.obj)
+                0x000000004200a17e                riscv_decode_offset_from_jal_instruction
  .text.esp_pm_impl_waiti
-                0x000000004200a1ae       0x1c esp-idf/esp_pm/libesp_pm.a(pm_impl.c.obj)
-                0x000000004200a1ae                esp_pm_impl_waiti
+                0x000000004200a1c8       0x1c esp-idf/esp_pm/libesp_pm.a(pm_impl.c.obj)
+                0x000000004200a1c8                esp_pm_impl_waiti
  .text.esp_ota_get_running_partition
-                0x000000004200a1ca       0xc6 esp-idf/app_update/libapp_update.a(esp_ota_ops.c.obj)
-                0x000000004200a1ca                esp_ota_get_running_partition
- .text          0x000000004200a290       0x12 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-errno.o)
-                0x000000004200a290                __errno
- .text          0x000000004200a2a2      0x2d6 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-findfp.o)
-                0x000000004200a310                _cleanup_r
-                0x000000004200a370                __sfmoreglue
-                0x000000004200a3c0                _cleanup
-                0x000000004200a3ca                __sfp_lock_acquire
-                0x000000004200a3da                __sfp_lock_release
-                0x000000004200a3ea                __sinit_lock_acquire
-                0x000000004200a3fa                __sinit_lock_release
-                0x000000004200a40a                __sinit
-                0x000000004200a46c                __sfp
-                0x000000004200a53c                __fp_lock_all
-                0x000000004200a55a                __fp_unlock_all
- .text          0x000000004200a578      0x116 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fopen.o)
-                0x000000004200a578                _fopen_r
-                0x000000004200a670                fopen
- .text          0x000000004200a68e       0x26 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseek.o)
-                0x000000004200a68e                _fseek_r
-                0x000000004200a690                fseek
- .text          0x000000004200a6b4      0x370 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseeko.o)
-                0x000000004200a6b4                _fseeko_r
-                0x000000004200aa00                fseeko
- .text          0x000000004200aa24      0x13e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ftello.o)
-                0x000000004200aa24                _ftello_r
-                0x000000004200ab4c                ftello
- .text          0x000000004200ab62      0x30a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fvwrite.o)
-                0x000000004200ab62                __sfvwrite_r
- .text          0x000000004200ae6c       0xce /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fwalk.o)
-                0x000000004200ae6c                _fwalk
-                0x000000004200aece                _fwalk_reent
- .text          0x000000004200af3a      0x124 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-makebuf.o)
-                0x000000004200af3a                __swhatbuf_r
-                0x000000004200afb6                __smakebuf_r
- .text          0x000000004200b05e       0x7a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-printf.o)
-                0x000000004200b05e                _printf_r
-                0x000000004200b096                printf
- .text          0x000000004200b0d8      0x142 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-reent.o)
-                0x000000004200b0d8                cleanup_glue
-                0x000000004200b0fe                _reclaim_reent
- .text          0x000000004200b21a      0x16e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-refill.o)
-                0x000000004200b22e                __srefill_r
- .text          0x000000004200b388       0xc8 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-stdio.o)
-                0x000000004200b388                __sread
-                0x000000004200b3ba                __seofread
-                0x000000004200b3be                __swrite
-                0x000000004200b410                __sseek
-                0x000000004200b448                __sclose
- .text          0x000000004200b450       0x24 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-sysgettod.o)
-                0x000000004200b450                gettimeofday
- .text          0x000000004200b474     0x286e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfprintf.o)
-                0x000000004200b86c                _vfprintf_r
-                0x000000004200dc16                vfprintf
- .text          0x000000004200dce2       0x64 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vprintf.o)
-                0x000000004200dce2                vprintf
-                0x000000004200dd1a                _vprintf_r
- .text          0x000000004200dd46      0x118 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wsetup.o)
-                0x000000004200dd46                __swsetup_r
- .text          0x000000004200de5e      0xe76 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-dtoa.o)
-                0x000000004200df98                _dtoa_r
- .text          0x000000004200ecd4      0x138 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fclose.o)
-                0x000000004200ecd4                _fclose_r
-                0x000000004200edf6                fclose
- .text          0x000000004200ee0c      0x246 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fflush.o)
-                0x000000004200ee0c                __sflush_r
-                0x000000004200ef7c                _fflush_r
-                0x000000004200f026                fflush
- .text          0x000000004200f052       0x7a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-flags.o)
-                0x000000004200f052                __sflags
- .text          0x000000004200f0cc       0x22 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-localeconv.o)
-                0x000000004200f0cc                __localeconv_l
-                0x000000004200f0d2                _localeconv_r
-                0x000000004200f0e0                localeconv
- .text          0x000000004200f0ee      0xb32 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mprec.o)
-                0x000000004200f0ee                _Balloc
-                0x000000004200f1a6                _Bfree
-                0x000000004200f20e                __multadd
-                0x000000004200f2d2                __s2b
-                0x000000004200f392                __hi0bits
-                0x000000004200f3d8                __lo0bits
-                0x000000004200f442                __i2b
-                0x000000004200f47c                __multiply
-                0x000000004200f5de                __pow5mult
-                0x000000004200f6b6                __lshift
-                0x000000004200f7a0                __mcmp
-                0x000000004200f7d2                __mdiff
-                0x000000004200f8f0                __ulp
-                0x000000004200f936                __b2d
-                0x000000004200f9e8                __d2b
-                0x000000004200fad6                __ratio
-                0x000000004200fb4a                _mprec_log10
-                0x000000004200fba4                __copybits
-                0x000000004200fbda                __any_on
- .text          0x000000004200fc20       0x82 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-s_frexp.o)
-                0x000000004200fc20                frexp
- .text          0x000000004200fca2     0x1996 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-svfiprintf.o)
-                0x0000000042010082                __ssprint_r
-                0x00000000420101ca                _svfiprintf_r
- .text          0x0000000042011638     0x1a40 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfiprintf.o)
-                0x0000000042011a30                __sprint_r
-                0x0000000042011a58                _vfiprintf_r
-                0x0000000042012fac                vfiprintf
- .text          0x0000000042013078       0x48 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mbtowc_r.o)
-                0x0000000042013078                _mbtowc_r
-                0x0000000042013086                __ascii_mbtowc
- .text          0x00000000420130c0       0x2e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wctomb_r.o)
-                0x00000000420130c0                _wctomb_r
-                0x00000000420130ce                __ascii_wctomb
- .text          0x00000000420130ee      0x246 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(trunctfdf2.o)
-                0x00000000420130ee                __trunctfdf2
+                0x000000004200a1e4       0xc6 esp-idf/app_update/libapp_update.a(esp_ota_ops.c.obj)
+                0x000000004200a1e4                esp_ota_get_running_partition
+ .text          0x000000004200a2aa       0x12 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-errno.o)
+                0x000000004200a2aa                __errno
+ .text          0x000000004200a2bc      0x2d6 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-findfp.o)
+                0x000000004200a32a                _cleanup_r
+                0x000000004200a38a                __sfmoreglue
+                0x000000004200a3da                _cleanup
+                0x000000004200a3e4                __sfp_lock_acquire
+                0x000000004200a3f4                __sfp_lock_release
+                0x000000004200a404                __sinit_lock_acquire
+                0x000000004200a414                __sinit_lock_release
+                0x000000004200a424                __sinit
+                0x000000004200a486                __sfp
+                0x000000004200a556                __fp_lock_all
+                0x000000004200a574                __fp_unlock_all
+ .text          0x000000004200a592      0x116 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fopen.o)
+                0x000000004200a592                _fopen_r
+                0x000000004200a68a                fopen
+ .text          0x000000004200a6a8       0x26 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseek.o)
+                0x000000004200a6a8                _fseek_r
+                0x000000004200a6aa                fseek
+ .text          0x000000004200a6ce      0x370 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseeko.o)
+                0x000000004200a6ce                _fseeko_r
+                0x000000004200aa1a                fseeko
+ .text          0x000000004200aa3e      0x13e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ftello.o)
+                0x000000004200aa3e                _ftello_r
+                0x000000004200ab66                ftello
+ .text          0x000000004200ab7c      0x30a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fvwrite.o)
+                0x000000004200ab7c                __sfvwrite_r
+ .text          0x000000004200ae86       0xce /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fwalk.o)
+                0x000000004200ae86                _fwalk
+                0x000000004200aee8                _fwalk_reent
+ .text          0x000000004200af54      0x124 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-makebuf.o)
+                0x000000004200af54                __swhatbuf_r
+                0x000000004200afd0                __smakebuf_r
+ .text          0x000000004200b078       0x7a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-printf.o)
+                0x000000004200b078                _printf_r
+                0x000000004200b0b0                printf
+ .text          0x000000004200b0f2      0x142 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-reent.o)
+                0x000000004200b0f2                cleanup_glue
+                0x000000004200b118                _reclaim_reent
+ .text          0x000000004200b234      0x16e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-refill.o)
+                0x000000004200b248                __srefill_r
+ .text          0x000000004200b3a2       0xc8 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-stdio.o)
+                0x000000004200b3a2                __sread
+                0x000000004200b3d4                __seofread
+                0x000000004200b3d8                __swrite
+                0x000000004200b42a                __sseek
+                0x000000004200b462                __sclose
+ .text          0x000000004200b46a       0x24 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-sysgettod.o)
+                0x000000004200b46a                gettimeofday
+ .text          0x000000004200b48e     0x286e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfprintf.o)
+                0x000000004200b886                _vfprintf_r
+                0x000000004200dc30                vfprintf
+ .text          0x000000004200dcfc       0x64 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vprintf.o)
+                0x000000004200dcfc                vprintf
+                0x000000004200dd34                _vprintf_r
+ .text          0x000000004200dd60      0x118 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wsetup.o)
+                0x000000004200dd60                __swsetup_r
+ .text          0x000000004200de78      0xe76 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-dtoa.o)
+                0x000000004200dfb2                _dtoa_r
+ .text          0x000000004200ecee      0x138 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fclose.o)
+                0x000000004200ecee                _fclose_r
+                0x000000004200ee10                fclose
+ .text          0x000000004200ee26      0x246 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fflush.o)
+                0x000000004200ee26                __sflush_r
+                0x000000004200ef96                _fflush_r
+                0x000000004200f040                fflush
+ .text          0x000000004200f06c       0x7a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-flags.o)
+                0x000000004200f06c                __sflags
+ .text          0x000000004200f0e6       0x22 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-localeconv.o)
+                0x000000004200f0e6                __localeconv_l
+                0x000000004200f0ec                _localeconv_r
+                0x000000004200f0fa                localeconv
+ .text          0x000000004200f108      0xb32 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mprec.o)
+                0x000000004200f108                _Balloc
+                0x000000004200f1c0                _Bfree
+                0x000000004200f228                __multadd
+                0x000000004200f2ec                __s2b
+                0x000000004200f3ac                __hi0bits
+                0x000000004200f3f2                __lo0bits
+                0x000000004200f45c                __i2b
+                0x000000004200f496                __multiply
+                0x000000004200f5f8                __pow5mult
+                0x000000004200f6d0                __lshift
+                0x000000004200f7ba                __mcmp
+                0x000000004200f7ec                __mdiff
+                0x000000004200f90a                __ulp
+                0x000000004200f950                __b2d
+                0x000000004200fa02                __d2b
+                0x000000004200faf0                __ratio
+                0x000000004200fb64                _mprec_log10
+                0x000000004200fbbe                __copybits
+                0x000000004200fbf4                __any_on
+ .text          0x000000004200fc3a       0x82 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-s_frexp.o)
+                0x000000004200fc3a                frexp
+ .text          0x000000004200fcbc     0x1996 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-svfiprintf.o)
+                0x000000004201009c                __ssprint_r
+                0x00000000420101e4                _svfiprintf_r
+ .text          0x0000000042011652     0x1a40 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfiprintf.o)
+                0x0000000042011a4a                __sprint_r
+                0x0000000042011a72                _vfiprintf_r
+                0x0000000042012fc6                vfiprintf
+ .text          0x0000000042013092       0x48 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mbtowc_r.o)
+                0x0000000042013092                _mbtowc_r
+                0x00000000420130a0                __ascii_mbtowc
+ .text          0x00000000420130da       0x2e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wctomb_r.o)
+                0x00000000420130da                _wctomb_r
+                0x00000000420130e8                __ascii_wctomb
+ .text          0x0000000042013108      0x246 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(trunctfdf2.o)
+                0x0000000042013108                __trunctfdf2
  *(EXCLUDE_FILE(*libpp.a *libnet80211.a) .wifi0iram EXCLUDE_FILE(*libpp.a *libnet80211.a) .wifi0iram.*)
  *(EXCLUDE_FILE(*libpp.a) .wifiorslpiram EXCLUDE_FILE(*libpp.a) .wifiorslpiram.*)
  *(EXCLUDE_FILE(*libpp.a *libnet80211.a) .wifirxiram EXCLUDE_FILE(*libpp.a *libnet80211.a) .wifirxiram.*)
@@ -9193,59 +9193,59 @@ END GROUP
  *libesp_event.a:esp_event.*(.text .text.base_node_add_handler .text.base_node_remove_all_handler .text.base_node_remove_handler .text.esp_event_dump .text.esp_event_handler_instance_register_with .text.esp_event_handler_instance_unregister_with .text.esp_event_handler_register_with .text.esp_event_handler_register_with_internal .text.esp_event_handler_unregister_with .text.esp_event_handler_unregister_with_internal .text.esp_event_loop_create .text.esp_event_loop_delete .text.esp_event_loop_run .text.esp_event_loop_run_task .text.esp_event_post_to .text.handler_execute .text.handler_instances_add .text.handler_instances_remove .text.handler_instances_remove_all .text.loop_node_add_handler .text.loop_node_remove_all_handler .text.loop_node_remove_handler)
  *libesp_hw_support.a:rtc_init.*(.text .text.calibrate_ocode .text.get_dig_dbias_by_efuse .text.get_rtc_dbias_by_efuse .text.rtc_init .text.rtc_vddsdio_get_config .text.set_ocode_by_efuse .text.set_rtc_dig_dbias)
  .text.set_ocode_by_efuse
-                0x0000000042013334       0x92 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
+                0x000000004201334e       0x92 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
  .text.get_dig_dbias_by_efuse
-                0x00000000420133c6       0x7c esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
+                0x00000000420133e0       0x7c esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
  .text.calibrate_ocode
-                0x0000000042013442      0x12e esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
+                0x000000004201345c      0x12e esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
  .text.get_rtc_dbias_by_efuse
-                0x0000000042013570      0x172 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
-                0x0000000042013570                get_rtc_dbias_by_efuse
+                0x000000004201358a      0x172 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
+                0x000000004201358a                get_rtc_dbias_by_efuse
  .text.set_rtc_dig_dbias
-                0x00000000420136e2       0x78 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
+                0x00000000420136fc       0x78 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
  .text.rtc_init
-                0x000000004201375a      0x458 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
-                0x000000004201375a                rtc_init
+                0x0000000042013774      0x458 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
+                0x0000000042013774                rtc_init
  *libesp_system.a:esp_system.*(.text .text.esp_get_free_heap_size .text.esp_get_free_internal_heap_size .text.esp_get_idf_version .text.esp_get_minimum_free_heap_size .text.esp_register_shutdown_handler .text.esp_unregister_shutdown_handler)
  .text.esp_register_shutdown_handler
-                0x0000000042013bb2       0x40 esp-idf/esp_system/libesp_system.a(esp_system.c.obj)
-                0x0000000042013bb2                esp_register_shutdown_handler
+                0x0000000042013bcc       0x40 esp-idf/esp_system/libesp_system.a(esp_system.c.obj)
+                0x0000000042013bcc                esp_register_shutdown_handler
  *libfreertos.a:port.*(.literal.esp_startup_start_app .text.esp_startup_start_app)
  .text.esp_startup_start_app
-                0x0000000042013bf2       0x42 esp-idf/freertos/libfreertos.a(port.c.obj)
-                0x0000000042013bf2                esp_startup_start_app
+                0x0000000042013c0c       0x42 esp-idf/freertos/libfreertos.a(port.c.obj)
+                0x0000000042013c0c                esp_startup_start_app
  *libfreertos.a:port_common.*(.literal.main_task .text.main_task)
  .text.main_task
-                0x0000000042013c34       0x80 esp-idf/freertos/libfreertos.a(port_common.c.obj)
+                0x0000000042013c4e       0x80 esp-idf/freertos/libfreertos.a(port_common.c.obj)
  *liblog.a:log.*(.text .text.esp_log_level_get .text.esp_log_level_set .text.esp_log_set_vprintf .text.esp_log_writev .text.heap_bubble_down .text.s_log_level_get_and_unlock)
  .text.heap_bubble_down
-                0x0000000042013cb4       0x62 esp-idf/log/liblog.a(log.c.obj)
+                0x0000000042013cce       0x62 esp-idf/log/liblog.a(log.c.obj)
  .text.s_log_level_get_and_unlock
-                0x0000000042013d16      0x192 esp-idf/log/liblog.a(log.c.obj)
+                0x0000000042013d30      0x192 esp-idf/log/liblog.a(log.c.obj)
  .text.esp_log_writev
-                0x0000000042013ea8       0x42 esp-idf/log/liblog.a(log.c.obj)
-                0x0000000042013ea8                esp_log_writev
+                0x0000000042013ec2       0x42 esp-idf/log/liblog.a(log.c.obj)
+                0x0000000042013ec2                esp_log_writev
  *liblog.a:log_freertos.*(.text .text.esp_log_system_timestamp)
  *(.stub .gnu.warning .gnu.linkonce.literal.* .gnu.linkonce.t.*.literal .gnu.linkonce.t.*)
  *(.irom0.text)
  *(.fini.literal)
  *(.fini)
  *(.gnu.version)
-                0x0000000042013efa                . = (. + _esp_flash_mmap_prefetch_pad_size)
- *fill*         0x0000000042013eea       0x10 
-                0x0000000042013efa                _text_end = ABSOLUTE (.)
-                0x0000000042013efa                _instruction_reserved_end = ABSOLUTE (.)
-                0x0000000042013efa                _etext = .
+                0x0000000042013f14                . = (. + _esp_flash_mmap_prefetch_pad_size)
+ *fill*         0x0000000042013f04       0x10 
+                0x0000000042013f14                _text_end = ABSOLUTE (.)
+                0x0000000042013f14                _instruction_reserved_end = ABSOLUTE (.)
+                0x0000000042013f14                _etext = .
                 0x0000000000000000                _flash_cache_start = ABSOLUTE (0x0)
 
 .flash_rodata_dummy
                 0x000000003c000020    0x20000
                 0x000000003c000020                _flash_rodata_dummy_start = .
                 0x000000003c000020                . = ALIGN (ALIGNOF (.flash.text))
-                0x000000003c013efa                . = (. + SIZEOF (.flash.text))
- *fill*         0x000000003c000020    0x13eda 
+                0x000000003c013f14                . = (. + SIZEOF (.flash.text))
+ *fill*         0x000000003c000020    0x13ef4 
                 0x000000003c020020                . = (ALIGN (0x10000) + 0x20)
- *fill*         0x000000003c013efa     0xc126 
+ *fill*         0x000000003c013f14     0xc10c 
                 0x000000003c020020                _rodata_reserved_start = .
 
 .flash.appdesc  0x000000003c020020      0x100
@@ -9258,6 +9258,9 @@ END GROUP
 
 .flash.rodata   0x000000003c020120     0x6f90
                 0x000000003c020120                _flash_rodata_start = ABSOLUTE (.)
+ *(.rodata_wlog_error .rodata_wlog_error.*)
+ *(.rodata_wlog_info .rodata_wlog_info.*)
+ *(.rodata_wlog_warning .rodata_wlog_warning.*)
  *(EXCLUDE_FILE(*libspi_flash.a:spi_flash_rom_patch.* *libspi_flash.a:spi_flash_chip_winbond.* *libspi_flash.a:spi_flash_chip_th.* *libspi_flash.a:spi_flash_chip_mxic.* *libspi_flash.a:spi_flash_chip_issi.* *libspi_flash.a:spi_flash_chip_generic.* *libspi_flash.a:spi_flash_chip_gd.* *libspi_flash.a:spi_flash_chip_boya.* *libspi_flash.a:memspi_host_driver.* *libsoc.a:lldesc.* *libnewlib.a:stdatomic.* *libnewlib.a:heap.* *libnewlib.a:assert.* *libnewlib.a:abort.* *libheap.a:multi_heap.* *libheap.a:heap_tlsf.* *libhal.a:wdt_hal_iram.* *libhal.a:systimer_hal.* *libhal.a:spi_slave_hal_iram.* *libhal.a:spi_hal_iram.* *libhal.a:spi_flash_hal_iram.* *libhal.a:spi_flash_hal_gpspi.* *libhal.a:spi_flash_encrypt_hal_iram.* *libhal.a:soc_hal.* *libhal.a:ledc_hal_iram.* *libhal.a:i2c_hal_iram.* *libhal.a:cpu_hal.* *libgcc.a:save-restore.* *libgcc.a:_divsf3.* *libesp_system.a:ubsan.* *libesp_system.a:esp_err.* *libesp_hw_support.a:rtc_clk.* *libapp_trace.a:app_trace_util.* *libapp_trace.a:app_trace.* *libphy.a *libgcov.a) .rodata EXCLUDE_FILE(*libspi_flash.a:spi_flash_rom_patch.* *libspi_flash.a:spi_flash_chip_winbond.* *libspi_flash.a:spi_flash_chip_th.* *libspi_flash.a:spi_flash_chip_mxic.* *libspi_flash.a:spi_flash_chip_issi.* *libspi_flash.a:spi_flash_chip_generic.* *libspi_flash.a:spi_flash_chip_gd.* *libspi_flash.a:spi_flash_chip_boya.* *libspi_flash.a:memspi_host_driver.* *libsoc.a:lldesc.* *libnewlib.a:stdatomic.* *libnewlib.a:heap.* *libnewlib.a:assert.* *libnewlib.a:abort.* *libheap.a:multi_heap.* *libheap.a:heap_tlsf.* *libhal.a:wdt_hal_iram.* *libhal.a:systimer_hal.* *libhal.a:spi_slave_hal_iram.* *libhal.a:spi_hal_iram.* *libhal.a:spi_flash_hal_iram.* *libhal.a:spi_flash_hal_gpspi.* *libhal.a:spi_flash_encrypt_hal_iram.* *libhal.a:soc_hal.* *libhal.a:ledc_hal_iram.* *libhal.a:i2c_hal_iram.* *libhal.a:cpu_hal.* *libgcc.a:save-restore.* *libgcc.a:_divsf3.* *libesp_system.a:ubsan.* *libesp_system.a:esp_err.* *libesp_hw_support.a:rtc_clk.* *libapp_trace.a:app_trace_util.* *libapp_trace.a:app_trace.* *libphy.a *libgcov.a) .rodata.* EXCLUDE_FILE(*libspi_flash.a:spi_flash_rom_patch.* *libspi_flash.a:spi_flash_chip_winbond.* *libspi_flash.a:spi_flash_chip_th.* *libspi_flash.a:spi_flash_chip_mxic.* *libspi_flash.a:spi_flash_chip_issi.* *libspi_flash.a:spi_flash_chip_generic.* *libspi_flash.a:spi_flash_chip_gd.* *libspi_flash.a:spi_flash_chip_boya.* *libspi_flash.a:memspi_host_driver.* *libsoc.a:lldesc.* *libnewlib.a:stdatomic.* *libnewlib.a:heap.* *libnewlib.a:assert.* *libnewlib.a:abort.* *libheap.a:multi_heap.* *libheap.a:heap_tlsf.* *libhal.a:wdt_hal_iram.* *libhal.a:systimer_hal.* *libhal.a:spi_slave_hal_iram.* *libhal.a:spi_hal_iram.* *libhal.a:spi_flash_hal_iram.* *libhal.a:spi_flash_hal_gpspi.* *libhal.a:spi_flash_encrypt_hal_iram.* *libhal.a:soc_hal.* *libhal.a:ledc_hal_iram.* *libhal.a:i2c_hal_iram.* *libhal.a:cpu_hal.* *libgcc.a:save-restore.* *libgcc.a:_divsf3.* *libesp_system.a:ubsan.* *libesp_system.a:esp_err.* *libesp_hw_support.a:rtc_clk.* *libapp_trace.a:app_trace_util.* *libapp_trace.a:app_trace.* *libphy.a *libgcov.a) .sdata2 EXCLUDE_FILE(*libspi_flash.a:spi_flash_rom_patch.* *libspi_flash.a:spi_flash_chip_winbond.* *libspi_flash.a:spi_flash_chip_th.* *libspi_flash.a:spi_flash_chip_mxic.* *libspi_flash.a:spi_flash_chip_issi.* *libspi_flash.a:spi_flash_chip_generic.* *libspi_flash.a:spi_flash_chip_gd.* *libspi_flash.a:spi_flash_chip_boya.* *libspi_flash.a:memspi_host_driver.* *libsoc.a:lldesc.* *libnewlib.a:stdatomic.* *libnewlib.a:heap.* *libnewlib.a:assert.* *libnewlib.a:abort.* *libheap.a:multi_heap.* *libheap.a:heap_tlsf.* *libhal.a:wdt_hal_iram.* *libhal.a:systimer_hal.* *libhal.a:spi_slave_hal_iram.* *libhal.a:spi_hal_iram.* *libhal.a:spi_flash_hal_iram.* *libhal.a:spi_flash_hal_gpspi.* *libhal.a:spi_flash_encrypt_hal_iram.* *libhal.a:soc_hal.* *libhal.a:ledc_hal_iram.* *libhal.a:i2c_hal_iram.* *libhal.a:cpu_hal.* *libgcc.a:save-restore.* *libgcc.a:_divsf3.* *libesp_system.a:ubsan.* *libesp_system.a:esp_err.* *libesp_hw_support.a:rtc_clk.* *libapp_trace.a:app_trace_util.* *libapp_trace.a:app_trace.* *libphy.a *libgcov.a) .sdata2.* EXCLUDE_FILE(*libspi_flash.a:spi_flash_rom_patch.* *libspi_flash.a:spi_flash_chip_winbond.* *libspi_flash.a:spi_flash_chip_th.* *libspi_flash.a:spi_flash_chip_mxic.* *libspi_flash.a:spi_flash_chip_issi.* *libspi_flash.a:spi_flash_chip_generic.* *libspi_flash.a:spi_flash_chip_gd.* *libspi_flash.a:spi_flash_chip_boya.* *libspi_flash.a:memspi_host_driver.* *libsoc.a:lldesc.* *libnewlib.a:stdatomic.* *libnewlib.a:heap.* *libnewlib.a:assert.* *libnewlib.a:abort.* *libheap.a:multi_heap.* *libheap.a:heap_tlsf.* *libhal.a:wdt_hal_iram.* *libhal.a:systimer_hal.* *libhal.a:spi_slave_hal_iram.* *libhal.a:spi_hal_iram.* *libhal.a:spi_flash_hal_iram.* *libhal.a:spi_flash_hal_gpspi.* *libhal.a:spi_flash_encrypt_hal_iram.* *libhal.a:soc_hal.* *libhal.a:ledc_hal_iram.* *libhal.a:i2c_hal_iram.* *libhal.a:cpu_hal.* *libgcc.a:save-restore.* *libgcc.a:_divsf3.* *libesp_system.a:ubsan.* *libesp_system.a:esp_err.* *libesp_hw_support.a:rtc_clk.* *libapp_trace.a:app_trace_util.* *libapp_trace.a:app_trace.* *libphy.a *libgcov.a) .srodata EXCLUDE_FILE(*libspi_flash.a:spi_flash_rom_patch.* *libspi_flash.a:spi_flash_chip_winbond.* *libspi_flash.a:spi_flash_chip_th.* *libspi_flash.a:spi_flash_chip_mxic.* *libspi_flash.a:spi_flash_chip_issi.* *libspi_flash.a:spi_flash_chip_generic.* *libspi_flash.a:spi_flash_chip_gd.* *libspi_flash.a:spi_flash_chip_boya.* *libspi_flash.a:memspi_host_driver.* *libsoc.a:lldesc.* *libnewlib.a:stdatomic.* *libnewlib.a:heap.* *libnewlib.a:assert.* *libnewlib.a:abort.* *libheap.a:multi_heap.* *libheap.a:heap_tlsf.* *libhal.a:wdt_hal_iram.* *libhal.a:systimer_hal.* *libhal.a:spi_slave_hal_iram.* *libhal.a:spi_hal_iram.* *libhal.a:spi_flash_hal_iram.* *libhal.a:spi_flash_hal_gpspi.* *libhal.a:spi_flash_encrypt_hal_iram.* *libhal.a:soc_hal.* *libhal.a:ledc_hal_iram.* *libhal.a:i2c_hal_iram.* *libhal.a:cpu_hal.* *libgcc.a:save-restore.* *libgcc.a:_divsf3.* *libesp_system.a:ubsan.* *libesp_system.a:esp_err.* *libesp_hw_support.a:rtc_clk.* *libapp_trace.a:app_trace_util.* *libapp_trace.a:app_trace.* *libphy.a *libgcov.a) .srodata.*)
  .rodata.str1.4
                 0x000000003c020120       0xee esp-idf/esp_system/libesp_system.a(cpu_start.c.obj)
@@ -10095,9 +10098,6 @@ END GROUP
  .rodata.str1.4
                 0x000000003c027080        0xe /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-locale.o)
                                          0x12 (size before relaxing)
- *(.rodata_wlog_error .rodata_wlog_error.*)
- *(.rodata_wlog_info .rodata_wlog_info.*)
- *(.rodata_wlog_warning .rodata_wlog_warning.*)
  *(.irom1.text)
  *(.gnu.linkonce.r.*)
  *(.rodata1)
@@ -10309,6 +10309,8 @@ END GROUP
  .rela.text.measureDistance
                 0x000000003c0270b0        0x0 esp-idf/app_update/libapp_update.a(esp_app_desc.c.obj)
  .rela.text.hcsr04_setup
+                0x000000003c0270b0        0x0 esp-idf/app_update/libapp_update.a(esp_app_desc.c.obj)
+ .rela.text.app_main
                 0x000000003c0270b0        0x0 esp-idf/app_update/libapp_update.a(esp_app_desc.c.obj)
  .rela.text._onewire_read_bit
                 0x000000003c0270b0        0x0 esp-idf/app_update/libapp_update.a(esp_app_desc.c.obj)
@@ -12482,7 +12484,7 @@ END GROUP
                 0x000000006003f000                PROVIDE (GDMA = 0x6003f000)
 OUTPUT(project.elf elf32-littleriscv)
 
-.debug_info     0x0000000000000000   0x172c2d
+.debug_info     0x0000000000000000   0x172c6c
  .debug_info    0x0000000000000000     0x13f9 esp-idf/app_update/libapp_update.a(esp_app_desc.c.obj)
  .debug_info    0x00000000000013f9     0x2917 esp-idf/pthread/libpthread.a(pthread.c.obj)
  .debug_info    0x0000000000003d10     0x1185 esp-idf/pthread/libpthread.a(pthread_local_storage.c.obj)
@@ -12553,91 +12555,91 @@ OUTPUT(project.elf elf32-littleriscv)
  .debug_info    0x00000000000a9502     0x1222 esp-idf/newlib/libnewlib.a(time.c.obj)
  .debug_info    0x00000000000aa724      0xe23 esp-idf/newlib/libnewlib.a(esp_time_impl.c.obj)
  .debug_info    0x00000000000ab547     0x1d5f esp-idf/cxx/libcxx.a(cxx_guards.cpp.obj)
- .debug_info    0x00000000000ad2a6     0x28be esp-idf/main/libmain.a(main.c.obj)
- .debug_info    0x00000000000afb64     0x2cc6 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
- .debug_info    0x00000000000b282a     0x2f2c esp-idf/onewire/libonewire.a(onewire.c.obj)
- .debug_info    0x00000000000b5756     0x2071 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
- .debug_info    0x00000000000b77c7     0x3741 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
- .debug_info    0x00000000000baf08     0x37a5 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
- .debug_info    0x00000000000be6ad     0x2e2e esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
- .debug_info    0x00000000000c14db     0x8a39 esp-idf/driver/libdriver.a(gpio.c.obj)
- .debug_info    0x00000000000c9f14     0x10f5 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
- .debug_info    0x00000000000cb009     0x9dbe esp-idf/driver/libdriver.a(uart.c.obj)
- .debug_info    0x00000000000d4dc7      0x97e esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
- .debug_info    0x00000000000d5745     0x254f esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32c3.c.obj)
- .debug_info    0x00000000000d7c94     0x5603 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash.c.obj)
- .debug_info    0x00000000000dd297     0x1311 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
- .debug_info    0x00000000000de5a8     0x392b esp-idf/spi_flash/libspi_flash.a(flash_mmap.c.obj)
- .debug_info    0x00000000000e1ed3     0x53ac esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
- .debug_info    0x00000000000e727f     0x6ae4 esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
- .debug_info    0x00000000000edd63     0x69b5 esp-idf/spi_flash/libspi_flash.a(esp_flash_spi_init.c.obj)
- .debug_info    0x00000000000f4718     0x4fb7 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_app.c.obj)
- .debug_info    0x00000000000f96cf     0x1452 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_noos.c.obj)
- .debug_info    0x00000000000fab21     0x4689 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
- .debug_info    0x00000000000ff1aa     0x1543 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_drivers.c.obj)
- .debug_info    0x00000000001006ed     0x2b6c esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_generic.c.obj)
- .debug_info    0x0000000000103259     0x1692 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_issi.c.obj)
- .debug_info    0x00000000001048eb     0x49f4 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_mxic.c.obj)
- .debug_info    0x00000000001092df     0x1724 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_gd.c.obj)
- .debug_info    0x000000000010aa03     0x1b44 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_winbond.c.obj)
- .debug_info    0x000000000010c547     0x15ad esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_boya.c.obj)
- .debug_info    0x000000000010daf4     0x15a1 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_th.c.obj)
- .debug_info    0x000000000010f095     0x4ca6 esp-idf/spi_flash/libspi_flash.a(memspi_host_driver.c.obj)
- .debug_info    0x0000000000113d3b      0xcff esp-idf/esp_system/libesp_system.a(esp_err.c.obj)
- .debug_info    0x0000000000114a3a      0xe3c esp-idf/esp_system/libesp_system.a(crosscore_int.c.obj)
- .debug_info    0x0000000000115876      0xe2e esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
- .debug_info    0x00000000001166a4     0x4cd5 esp-idf/esp_system/libesp_system.a(int_wdt.c.obj)
- .debug_info    0x000000000011b379     0x5624 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
- .debug_info    0x000000000012099d     0x36e9 esp-idf/hal/libhal.a(uart_hal.c.obj)
- .debug_info    0x0000000000124086     0x489f esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
- .debug_info    0x0000000000128925     0x5ce4 esp-idf/hal/libhal.a(spi_flash_hal_iram.c.obj)
- .debug_info    0x000000000012e609      0xcd9 esp-idf/hal/libhal.a(spi_flash_encrypt_hal_iram.c.obj)
- .debug_info    0x000000000012f2e2      0xb12 esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
- .debug_info    0x000000000012fdf4     0x51b2 esp-idf/hal/libhal.a(spi_flash_hal_gpspi.c.obj)
- .debug_info    0x0000000000134fa6     0x20ec esp-idf/hal/libhal.a(systimer_hal.c.obj)
- .debug_info    0x0000000000137092     0x1fc4 esp-idf/soc/libsoc.a(gpio_periph.c.obj)
- .debug_info    0x0000000000139056      0xb3a esp-idf/esp_hw_support/libesp_hw_support.a(cpu_util_esp32c3.c.obj)
- .debug_info    0x0000000000139b90      0xa4c esp-idf/riscv/libriscv.a(instruction_decode.c.obj)
- .debug_info    0x000000000013a5dc     0x3dbd esp-idf/esp_ringbuf/libesp_ringbuf.a(ringbuf.c.obj)
- .debug_info    0x000000000013e399     0x5b3e esp-idf/driver/libdriver.a(spi_bus_lock.c.obj)
- .debug_info    0x0000000000143ed7     0x4454 esp-idf/esp_pm/libesp_pm.a(pm_impl.c.obj)
- .debug_info    0x000000000014832b     0x4fb9 esp-idf/app_update/libapp_update.a(esp_ota_ops.c.obj)
- .debug_info    0x000000000014d2e4     0x1252 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_divdi3.o)
- .debug_info    0x000000000014e536     0x12a3 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_moddi3.o)
- .debug_info    0x000000000014f7d9     0x121c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_udivdi3.o)
- .debug_info    0x00000000001509f5     0x127a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_umoddi3.o)
- .debug_info    0x0000000000151c6f       0x43 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-environ.o)
- .debug_info    0x0000000000151cb2      0x982 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-errno.o)
- .debug_info    0x0000000000152634     0x123c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-findfp.o)
- .debug_info    0x0000000000153870      0xe0e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fopen.o)
- .debug_info    0x000000000015467e      0xce8 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseek.o)
- .debug_info    0x0000000000155366     0x11a0 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseeko.o)
- .debug_info    0x0000000000156506      0xcfd /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ftello.o)
- .debug_info    0x0000000000157203      0xefc /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fvwrite.o)
- .debug_info    0x00000000001580ff      0xcb8 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fwalk.o)
- .debug_info    0x0000000000158db7      0xf34 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-makebuf.o)
- .debug_info    0x0000000000159ceb      0xca1 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-printf.o)
- .debug_info    0x000000000015a98c      0xb1f /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-reent.o)
- .debug_info    0x000000000015b4ab      0xd17 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-refill.o)
- .debug_info    0x000000000015c1c2      0xe1d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-stdio.o)
- .debug_info    0x000000000015cfdf      0xa1a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-sysgettod.o)
- .debug_info    0x000000000015d9f9     0x2dc4 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfprintf.o)
- .debug_info    0x00000000001607bd      0xc7c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vprintf.o)
- .debug_info    0x0000000000161439      0xc4c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wsetup.o)
- .debug_info    0x0000000000162085     0x196d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-dtoa.o)
- .debug_info    0x00000000001639f2      0xd72 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fclose.o)
- .debug_info    0x0000000000164764      0xe2e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fflush.o)
- .debug_info    0x0000000000165592      0x9fa /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-flags.o)
- .debug_info    0x0000000000165f8c      0xffa /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-localeconv.o)
- .debug_info    0x0000000000166f86     0x210e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mprec.o)
- .debug_info    0x0000000000169094      0xa92 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-s_frexp.o)
- .debug_info    0x0000000000169b26     0x24c3 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-svfiprintf.o)
- .debug_info    0x000000000016bfe9     0x26c0 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfiprintf.o)
- .debug_info    0x000000000016e6a9      0xea5 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ctype_.o)
- .debug_info    0x000000000016f54e     0x111e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-locale.o)
- .debug_info    0x000000000017066c     0x1060 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mbtowc_r.o)
- .debug_info    0x00000000001716cc     0x1026 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wctomb_r.o)
- .debug_info    0x00000000001726f2      0x53b /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(trunctfdf2.o)
+ .debug_info    0x00000000000ad2a6     0x28fd esp-idf/main/libmain.a(main.c.obj)
+ .debug_info    0x00000000000afba3     0x2cc6 esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+ .debug_info    0x00000000000b2869     0x2f2c esp-idf/onewire/libonewire.a(onewire.c.obj)
+ .debug_info    0x00000000000b5795     0x2071 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
+ .debug_info    0x00000000000b7806     0x3741 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
+ .debug_info    0x00000000000baf47     0x37a5 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+ .debug_info    0x00000000000be6ec     0x2e2e esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+ .debug_info    0x00000000000c151a     0x8a39 esp-idf/driver/libdriver.a(gpio.c.obj)
+ .debug_info    0x00000000000c9f53     0x10f5 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
+ .debug_info    0x00000000000cb048     0x9dbe esp-idf/driver/libdriver.a(uart.c.obj)
+ .debug_info    0x00000000000d4e06      0x97e esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
+ .debug_info    0x00000000000d5784     0x254f esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32c3.c.obj)
+ .debug_info    0x00000000000d7cd3     0x5603 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash.c.obj)
+ .debug_info    0x00000000000dd2d6     0x1311 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
+ .debug_info    0x00000000000de5e7     0x392b esp-idf/spi_flash/libspi_flash.a(flash_mmap.c.obj)
+ .debug_info    0x00000000000e1f12     0x53ac esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
+ .debug_info    0x00000000000e72be     0x6ae4 esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
+ .debug_info    0x00000000000edda2     0x69b5 esp-idf/spi_flash/libspi_flash.a(esp_flash_spi_init.c.obj)
+ .debug_info    0x00000000000f4757     0x4fb7 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_app.c.obj)
+ .debug_info    0x00000000000f970e     0x1452 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_noos.c.obj)
+ .debug_info    0x00000000000fab60     0x4689 esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+ .debug_info    0x00000000000ff1e9     0x1543 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_drivers.c.obj)
+ .debug_info    0x000000000010072c     0x2b6c esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_generic.c.obj)
+ .debug_info    0x0000000000103298     0x1692 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_issi.c.obj)
+ .debug_info    0x000000000010492a     0x49f4 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_mxic.c.obj)
+ .debug_info    0x000000000010931e     0x1724 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_gd.c.obj)
+ .debug_info    0x000000000010aa42     0x1b44 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_winbond.c.obj)
+ .debug_info    0x000000000010c586     0x15ad esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_boya.c.obj)
+ .debug_info    0x000000000010db33     0x15a1 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_th.c.obj)
+ .debug_info    0x000000000010f0d4     0x4ca6 esp-idf/spi_flash/libspi_flash.a(memspi_host_driver.c.obj)
+ .debug_info    0x0000000000113d7a      0xcff esp-idf/esp_system/libesp_system.a(esp_err.c.obj)
+ .debug_info    0x0000000000114a79      0xe3c esp-idf/esp_system/libesp_system.a(crosscore_int.c.obj)
+ .debug_info    0x00000000001158b5      0xe2e esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
+ .debug_info    0x00000000001166e3     0x4cd5 esp-idf/esp_system/libesp_system.a(int_wdt.c.obj)
+ .debug_info    0x000000000011b3b8     0x5624 esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+ .debug_info    0x00000000001209dc     0x36e9 esp-idf/hal/libhal.a(uart_hal.c.obj)
+ .debug_info    0x00000000001240c5     0x489f esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
+ .debug_info    0x0000000000128964     0x5ce4 esp-idf/hal/libhal.a(spi_flash_hal_iram.c.obj)
+ .debug_info    0x000000000012e648      0xcd9 esp-idf/hal/libhal.a(spi_flash_encrypt_hal_iram.c.obj)
+ .debug_info    0x000000000012f321      0xb12 esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
+ .debug_info    0x000000000012fe33     0x51b2 esp-idf/hal/libhal.a(spi_flash_hal_gpspi.c.obj)
+ .debug_info    0x0000000000134fe5     0x20ec esp-idf/hal/libhal.a(systimer_hal.c.obj)
+ .debug_info    0x00000000001370d1     0x1fc4 esp-idf/soc/libsoc.a(gpio_periph.c.obj)
+ .debug_info    0x0000000000139095      0xb3a esp-idf/esp_hw_support/libesp_hw_support.a(cpu_util_esp32c3.c.obj)
+ .debug_info    0x0000000000139bcf      0xa4c esp-idf/riscv/libriscv.a(instruction_decode.c.obj)
+ .debug_info    0x000000000013a61b     0x3dbd esp-idf/esp_ringbuf/libesp_ringbuf.a(ringbuf.c.obj)
+ .debug_info    0x000000000013e3d8     0x5b3e esp-idf/driver/libdriver.a(spi_bus_lock.c.obj)
+ .debug_info    0x0000000000143f16     0x4454 esp-idf/esp_pm/libesp_pm.a(pm_impl.c.obj)
+ .debug_info    0x000000000014836a     0x4fb9 esp-idf/app_update/libapp_update.a(esp_ota_ops.c.obj)
+ .debug_info    0x000000000014d323     0x1252 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_divdi3.o)
+ .debug_info    0x000000000014e575     0x12a3 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_moddi3.o)
+ .debug_info    0x000000000014f818     0x121c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_udivdi3.o)
+ .debug_info    0x0000000000150a34     0x127a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_umoddi3.o)
+ .debug_info    0x0000000000151cae       0x43 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-environ.o)
+ .debug_info    0x0000000000151cf1      0x982 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-errno.o)
+ .debug_info    0x0000000000152673     0x123c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-findfp.o)
+ .debug_info    0x00000000001538af      0xe0e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fopen.o)
+ .debug_info    0x00000000001546bd      0xce8 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseek.o)
+ .debug_info    0x00000000001553a5     0x11a0 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseeko.o)
+ .debug_info    0x0000000000156545      0xcfd /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ftello.o)
+ .debug_info    0x0000000000157242      0xefc /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fvwrite.o)
+ .debug_info    0x000000000015813e      0xcb8 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fwalk.o)
+ .debug_info    0x0000000000158df6      0xf34 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-makebuf.o)
+ .debug_info    0x0000000000159d2a      0xca1 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-printf.o)
+ .debug_info    0x000000000015a9cb      0xb1f /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-reent.o)
+ .debug_info    0x000000000015b4ea      0xd17 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-refill.o)
+ .debug_info    0x000000000015c201      0xe1d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-stdio.o)
+ .debug_info    0x000000000015d01e      0xa1a /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-sysgettod.o)
+ .debug_info    0x000000000015da38     0x2dc4 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfprintf.o)
+ .debug_info    0x00000000001607fc      0xc7c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vprintf.o)
+ .debug_info    0x0000000000161478      0xc4c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wsetup.o)
+ .debug_info    0x00000000001620c4     0x196d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-dtoa.o)
+ .debug_info    0x0000000000163a31      0xd72 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fclose.o)
+ .debug_info    0x00000000001647a3      0xe2e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fflush.o)
+ .debug_info    0x00000000001655d1      0x9fa /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-flags.o)
+ .debug_info    0x0000000000165fcb      0xffa /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-localeconv.o)
+ .debug_info    0x0000000000166fc5     0x210e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mprec.o)
+ .debug_info    0x00000000001690d3      0xa92 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-s_frexp.o)
+ .debug_info    0x0000000000169b65     0x24c3 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-svfiprintf.o)
+ .debug_info    0x000000000016c028     0x26c0 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfiprintf.o)
+ .debug_info    0x000000000016e6e8      0xea5 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ctype_.o)
+ .debug_info    0x000000000016f58d     0x111e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-locale.o)
+ .debug_info    0x00000000001706ab     0x1060 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mbtowc_r.o)
+ .debug_info    0x000000000017170b     0x1026 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wctomb_r.o)
+ .debug_info    0x0000000000172731      0x53b /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(trunctfdf2.o)
 
 .debug_abbrev   0x0000000000000000    0x1f694
  .debug_abbrev  0x0000000000000000      0x306 esp-idf/app_update/libapp_update.a(esp_app_desc.c.obj)
@@ -13388,7 +13390,7 @@ OUTPUT(project.elf elf32-littleriscv)
  .debug_ranges  0x0000000000007040       0xa8 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfiprintf.o)
  .debug_ranges  0x00000000000070e8       0xd8 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(trunctfdf2.o)
 
-.debug_line     0x0000000000000000    0x95748
+.debug_line     0x0000000000000000    0x9575a
  .debug_line    0x0000000000000000      0x67f esp-idf/app_update/libapp_update.a(esp_app_desc.c.obj)
  .debug_line    0x000000000000067f     0x231c esp-idf/pthread/libpthread.a(pthread.c.obj)
  .debug_line    0x000000000000299b      0xbb7 esp-idf/pthread/libpthread.a(pthread_local_storage.c.obj)
@@ -13459,91 +13461,91 @@ OUTPUT(project.elf elf32-littleriscv)
  .debug_line    0x00000000000417a4      0xe37 esp-idf/newlib/libnewlib.a(time.c.obj)
  .debug_line    0x00000000000425db      0x619 esp-idf/newlib/libnewlib.a(esp_time_impl.c.obj)
  .debug_line    0x0000000000042bf4      0xc94 esp-idf/cxx/libcxx.a(cxx_guards.cpp.obj)
- .debug_line    0x0000000000043888      0xb4e esp-idf/main/libmain.a(main.c.obj)
- .debug_line    0x00000000000443d6     0x111f esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
- .debug_line    0x00000000000454f5     0x1470 esp-idf/onewire/libonewire.a(onewire.c.obj)
- .debug_line    0x0000000000046965      0x3f1 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
- .debug_line    0x0000000000046d56     0x10ba esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
- .debug_line    0x0000000000047e10     0x162f esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
- .debug_line    0x000000000004943f     0x11a8 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
- .debug_line    0x000000000004a5e7     0x3e8a esp-idf/driver/libdriver.a(gpio.c.obj)
- .debug_line    0x000000000004e471     0x1084 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
- .debug_line    0x000000000004f4f5     0x8177 esp-idf/driver/libdriver.a(uart.c.obj)
- .debug_line    0x000000000005766c      0x305 esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
- .debug_line    0x0000000000057971      0x60d esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32c3.c.obj)
- .debug_line    0x0000000000057f7e     0x127d esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash.c.obj)
- .debug_line    0x00000000000591fb      0x743 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
- .debug_line    0x000000000005993e     0x1812 esp-idf/spi_flash/libspi_flash.a(flash_mmap.c.obj)
- .debug_line    0x000000000005b150      0xb3d esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
- .debug_line    0x000000000005bc8d     0x3564 esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
- .debug_line    0x000000000005f1f1      0xe4d esp-idf/spi_flash/libspi_flash.a(esp_flash_spi_init.c.obj)
- .debug_line    0x000000000006003e      0xf46 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_app.c.obj)
- .debug_line    0x0000000000060f84      0x546 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_noos.c.obj)
- .debug_line    0x00000000000614ca     0x1c2f esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
- .debug_line    0x00000000000630f9      0x46c esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_drivers.c.obj)
- .debug_line    0x0000000000063565     0x213c esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_generic.c.obj)
- .debug_line    0x00000000000656a1      0x52f esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_issi.c.obj)
- .debug_line    0x0000000000065bd0      0x599 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_mxic.c.obj)
- .debug_line    0x0000000000066169      0x62b esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_gd.c.obj)
- .debug_line    0x0000000000066794      0xbb1 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_winbond.c.obj)
- .debug_line    0x0000000000067345      0x48f esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_boya.c.obj)
- .debug_line    0x00000000000677d4      0x476 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_th.c.obj)
- .debug_line    0x0000000000067c4a      0xdc3 esp-idf/spi_flash/libspi_flash.a(memspi_host_driver.c.obj)
- .debug_line    0x0000000000068a0d      0x42c esp-idf/esp_system/libesp_system.a(esp_err.c.obj)
- .debug_line    0x0000000000068e39      0x6ac esp-idf/esp_system/libesp_system.a(crosscore_int.c.obj)
- .debug_line    0x00000000000694e5      0xc02 esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
- .debug_line    0x000000000006a0e7      0x74d esp-idf/esp_system/libesp_system.a(int_wdt.c.obj)
- .debug_line    0x000000000006a834     0x150c esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
- .debug_line    0x000000000006bd40     0x15cb esp-idf/hal/libhal.a(uart_hal.c.obj)
- .debug_line    0x000000000006d30b      0x849 esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
- .debug_line    0x000000000006db54     0x197e esp-idf/hal/libhal.a(spi_flash_hal_iram.c.obj)
- .debug_line    0x000000000006f4d2      0x4fc esp-idf/hal/libhal.a(spi_flash_encrypt_hal_iram.c.obj)
- .debug_line    0x000000000006f9ce      0x47b esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
- .debug_line    0x000000000006fe49     0x121f esp-idf/hal/libhal.a(spi_flash_hal_gpspi.c.obj)
- .debug_line    0x0000000000071068      0xad4 esp-idf/hal/libhal.a(systimer_hal.c.obj)
- .debug_line    0x0000000000071b3c      0x35a esp-idf/soc/libsoc.a(gpio_periph.c.obj)
- .debug_line    0x0000000000071e96      0x58c esp-idf/esp_hw_support/libesp_hw_support.a(cpu_util_esp32c3.c.obj)
- .debug_line    0x0000000000072422      0x389 esp-idf/riscv/libriscv.a(instruction_decode.c.obj)
- .debug_line    0x00000000000727ab     0x35b8 esp-idf/esp_ringbuf/libesp_ringbuf.a(ringbuf.c.obj)
- .debug_line    0x0000000000075d63     0x1c13 esp-idf/driver/libdriver.a(spi_bus_lock.c.obj)
- .debug_line    0x0000000000077976     0x1414 esp-idf/esp_pm/libesp_pm.a(pm_impl.c.obj)
- .debug_line    0x0000000000078d8a     0x298a esp-idf/app_update/libapp_update.a(esp_ota_ops.c.obj)
- .debug_line    0x000000000007b714      0xa4f /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_divdi3.o)
- .debug_line    0x000000000007c163      0xac5 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_moddi3.o)
- .debug_line    0x000000000007cc28      0x98c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_udivdi3.o)
- .debug_line    0x000000000007d5b4      0xa52 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_umoddi3.o)
- .debug_line    0x000000000007e006       0x78 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-environ.o)
- .debug_line    0x000000000007e07e      0x191 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-errno.o)
- .debug_line    0x000000000007e20f      0x98d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-findfp.o)
- .debug_line    0x000000000007eb9c      0x43e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fopen.o)
- .debug_line    0x000000000007efda      0x260 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseek.o)
- .debug_line    0x000000000007f23a      0xb76 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseeko.o)
- .debug_line    0x000000000007fdb0      0x530 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ftello.o)
- .debug_line    0x00000000000802e0      0xa2e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fvwrite.o)
- .debug_line    0x0000000000080d0e      0x41d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fwalk.o)
- .debug_line    0x000000000008112b      0x571 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-makebuf.o)
- .debug_line    0x000000000008169c      0x395 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-printf.o)
- .debug_line    0x0000000000081a31      0x4ca /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-reent.o)
- .debug_line    0x0000000000081efb      0x5c2 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-refill.o)
- .debug_line    0x00000000000824bd      0x3fe /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-stdio.o)
- .debug_line    0x00000000000828bb      0x224 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-sysgettod.o)
- .debug_line    0x0000000000082adf     0x4a3f /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfprintf.o)
- .debug_line    0x000000000008751e      0x308 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vprintf.o)
- .debug_line    0x0000000000087826      0x4a6 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wsetup.o)
- .debug_line    0x0000000000087ccc     0x24a5 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-dtoa.o)
- .debug_line    0x000000000008a171      0x4ce /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fclose.o)
- .debug_line    0x000000000008a63f      0x7f0 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fflush.o)
- .debug_line    0x000000000008ae2f      0x31f /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-flags.o)
- .debug_line    0x000000000008b14e      0x2de /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-localeconv.o)
- .debug_line    0x000000000008b42c     0x2859 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mprec.o)
- .debug_line    0x000000000008dc85      0x422 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-s_frexp.o)
- .debug_line    0x000000000008e0a7     0x3180 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-svfiprintf.o)
- .debug_line    0x0000000000091227     0x321d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfiprintf.o)
- .debug_line    0x0000000000094444      0x1db /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ctype_.o)
- .debug_line    0x000000000009461f      0x369 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-locale.o)
- .debug_line    0x0000000000094988      0x374 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mbtowc_r.o)
- .debug_line    0x0000000000094cfc      0x308 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wctomb_r.o)
- .debug_line    0x0000000000095004      0x744 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(trunctfdf2.o)
+ .debug_line    0x0000000000043888      0xb60 esp-idf/main/libmain.a(main.c.obj)
+ .debug_line    0x00000000000443e8     0x111f esp-idf/ds18x20/libds18x20.a(ds18x20.c.obj)
+ .debug_line    0x0000000000045507     0x1470 esp-idf/onewire/libonewire.a(onewire.c.obj)
+ .debug_line    0x0000000000046977      0x3f1 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
+ .debug_line    0x0000000000046d68     0x10ba esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
+ .debug_line    0x0000000000047e22     0x162f esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+ .debug_line    0x0000000000049451     0x11a8 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+ .debug_line    0x000000000004a5f9     0x3e8a esp-idf/driver/libdriver.a(gpio.c.obj)
+ .debug_line    0x000000000004e483     0x1084 esp-idf/driver/libdriver.a(periph_ctrl.c.obj)
+ .debug_line    0x000000000004f507     0x8177 esp-idf/driver/libdriver.a(uart.c.obj)
+ .debug_line    0x000000000005767e      0x305 esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
+ .debug_line    0x0000000000057983      0x60d esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32c3.c.obj)
+ .debug_line    0x0000000000057f90     0x127d esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash.c.obj)
+ .debug_line    0x000000000005920d      0x743 esp-idf/spi_flash/libspi_flash.a(cache_utils.c.obj)
+ .debug_line    0x0000000000059950     0x1812 esp-idf/spi_flash/libspi_flash.a(flash_mmap.c.obj)
+ .debug_line    0x000000000005b162      0xb3d esp-idf/spi_flash/libspi_flash.a(flash_ops.c.obj)
+ .debug_line    0x000000000005bc9f     0x3564 esp-idf/spi_flash/libspi_flash.a(esp_flash_api.c.obj)
+ .debug_line    0x000000000005f203      0xe4d esp-idf/spi_flash/libspi_flash.a(esp_flash_spi_init.c.obj)
+ .debug_line    0x0000000000060050      0xf46 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_app.c.obj)
+ .debug_line    0x0000000000060f96      0x546 esp-idf/spi_flash/libspi_flash.a(spi_flash_os_func_noos.c.obj)
+ .debug_line    0x00000000000614dc     0x1c2f esp-idf/spi_flash/libspi_flash.a(partition.c.obj)
+ .debug_line    0x000000000006310b      0x46c esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_drivers.c.obj)
+ .debug_line    0x0000000000063577     0x213c esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_generic.c.obj)
+ .debug_line    0x00000000000656b3      0x52f esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_issi.c.obj)
+ .debug_line    0x0000000000065be2      0x599 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_mxic.c.obj)
+ .debug_line    0x000000000006617b      0x62b esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_gd.c.obj)
+ .debug_line    0x00000000000667a6      0xbb1 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_winbond.c.obj)
+ .debug_line    0x0000000000067357      0x48f esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_boya.c.obj)
+ .debug_line    0x00000000000677e6      0x476 esp-idf/spi_flash/libspi_flash.a(spi_flash_chip_th.c.obj)
+ .debug_line    0x0000000000067c5c      0xdc3 esp-idf/spi_flash/libspi_flash.a(memspi_host_driver.c.obj)
+ .debug_line    0x0000000000068a1f      0x42c esp-idf/esp_system/libesp_system.a(esp_err.c.obj)
+ .debug_line    0x0000000000068e4b      0x6ac esp-idf/esp_system/libesp_system.a(crosscore_int.c.obj)
+ .debug_line    0x00000000000694f7      0xc02 esp-idf/esp_system/libesp_system.a(freertos_hooks.c.obj)
+ .debug_line    0x000000000006a0f9      0x74d esp-idf/esp_system/libesp_system.a(int_wdt.c.obj)
+ .debug_line    0x000000000006a846     0x150c esp-idf/esp_system/libesp_system.a(task_wdt.c.obj)
+ .debug_line    0x000000000006bd52     0x15cb esp-idf/hal/libhal.a(uart_hal.c.obj)
+ .debug_line    0x000000000006d31d      0x849 esp-idf/hal/libhal.a(spi_flash_hal.c.obj)
+ .debug_line    0x000000000006db66     0x197e esp-idf/hal/libhal.a(spi_flash_hal_iram.c.obj)
+ .debug_line    0x000000000006f4e4      0x4fc esp-idf/hal/libhal.a(spi_flash_encrypt_hal_iram.c.obj)
+ .debug_line    0x000000000006f9e0      0x47b esp-idf/hal/libhal.a(interrupt_controller_hal.c.obj)
+ .debug_line    0x000000000006fe5b     0x121f esp-idf/hal/libhal.a(spi_flash_hal_gpspi.c.obj)
+ .debug_line    0x000000000007107a      0xad4 esp-idf/hal/libhal.a(systimer_hal.c.obj)
+ .debug_line    0x0000000000071b4e      0x35a esp-idf/soc/libsoc.a(gpio_periph.c.obj)
+ .debug_line    0x0000000000071ea8      0x58c esp-idf/esp_hw_support/libesp_hw_support.a(cpu_util_esp32c3.c.obj)
+ .debug_line    0x0000000000072434      0x389 esp-idf/riscv/libriscv.a(instruction_decode.c.obj)
+ .debug_line    0x00000000000727bd     0x35b8 esp-idf/esp_ringbuf/libesp_ringbuf.a(ringbuf.c.obj)
+ .debug_line    0x0000000000075d75     0x1c13 esp-idf/driver/libdriver.a(spi_bus_lock.c.obj)
+ .debug_line    0x0000000000077988     0x1414 esp-idf/esp_pm/libesp_pm.a(pm_impl.c.obj)
+ .debug_line    0x0000000000078d9c     0x298a esp-idf/app_update/libapp_update.a(esp_ota_ops.c.obj)
+ .debug_line    0x000000000007b726      0xa4f /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_divdi3.o)
+ .debug_line    0x000000000007c175      0xac5 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_moddi3.o)
+ .debug_line    0x000000000007cc3a      0x98c /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_udivdi3.o)
+ .debug_line    0x000000000007d5c6      0xa52 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(_umoddi3.o)
+ .debug_line    0x000000000007e018       0x78 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-environ.o)
+ .debug_line    0x000000000007e090      0x191 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-errno.o)
+ .debug_line    0x000000000007e221      0x98d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-findfp.o)
+ .debug_line    0x000000000007ebae      0x43e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fopen.o)
+ .debug_line    0x000000000007efec      0x260 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseek.o)
+ .debug_line    0x000000000007f24c      0xb76 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fseeko.o)
+ .debug_line    0x000000000007fdc2      0x530 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ftello.o)
+ .debug_line    0x00000000000802f2      0xa2e /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fvwrite.o)
+ .debug_line    0x0000000000080d20      0x41d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fwalk.o)
+ .debug_line    0x000000000008113d      0x571 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-makebuf.o)
+ .debug_line    0x00000000000816ae      0x395 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-printf.o)
+ .debug_line    0x0000000000081a43      0x4ca /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-reent.o)
+ .debug_line    0x0000000000081f0d      0x5c2 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-refill.o)
+ .debug_line    0x00000000000824cf      0x3fe /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-stdio.o)
+ .debug_line    0x00000000000828cd      0x224 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-sysgettod.o)
+ .debug_line    0x0000000000082af1     0x4a3f /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfprintf.o)
+ .debug_line    0x0000000000087530      0x308 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vprintf.o)
+ .debug_line    0x0000000000087838      0x4a6 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wsetup.o)
+ .debug_line    0x0000000000087cde     0x24a5 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-dtoa.o)
+ .debug_line    0x000000000008a183      0x4ce /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fclose.o)
+ .debug_line    0x000000000008a651      0x7f0 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-fflush.o)
+ .debug_line    0x000000000008ae41      0x31f /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-flags.o)
+ .debug_line    0x000000000008b160      0x2de /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-localeconv.o)
+ .debug_line    0x000000000008b43e     0x2859 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mprec.o)
+ .debug_line    0x000000000008dc97      0x422 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-s_frexp.o)
+ .debug_line    0x000000000008e0b9     0x3180 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-svfiprintf.o)
+ .debug_line    0x0000000000091239     0x321d /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-vfiprintf.o)
+ .debug_line    0x0000000000094456      0x1db /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-ctype_.o)
+ .debug_line    0x0000000000094631      0x369 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-locale.o)
+ .debug_line    0x000000000009499a      0x374 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-mbtowc_r.o)
+ .debug_line    0x0000000000094d0e      0x308 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/../../../../riscv32-esp-elf/lib/rv32imc/ilp32/no-rtti/libc.a(lib_a-wctomb_r.o)
+ .debug_line    0x0000000000095016      0x744 /home/hss/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/8.4.0/rv32imc/ilp32/no-rtti/libgcc.a(trunctfdf2.o)
 
 .debug_str      0x0000000000000000    0x238ed
  .debug_str     0x0000000000000000      0x929 esp-idf/app_update/libapp_update.a(esp_app_desc.c.obj)

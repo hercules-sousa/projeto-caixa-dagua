@@ -11,6 +11,7 @@
 
 #define TRIGGER_PIN 1
 #define ECHO_PIN 0
+#define YELLOW_LED_PIN 8
 
 static const gpio_num_t SENSOR_GPIO = 13;
 static const int MAX_SENSORS = 1;
@@ -135,6 +136,10 @@ void measure_temperature(void *pvParameter)
 void app_main()
 {
     hcsr04_setup();
+
+    gpio_pad_select_gpio(YELLOW_LED_PIN);
+    gpio_set_direction(YELLOW_LED_PIN, GPIO_MODE_OUTPUT);
+    gpio_set_level(YELLOW_LED_PIN, 1);
 
     xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
     xTaskCreate(measure_temperature, "measure_temperature", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
