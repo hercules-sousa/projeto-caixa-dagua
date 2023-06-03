@@ -11,6 +11,7 @@
 
 #define TRIGGER_PIN 1
 #define ECHO_PIN 0
+#define YELLOW_LED_PIN 8
 
 static const gpio_num_t SENSOR_GPIO = 13;
 static const int MAX_SENSORS = 1;
@@ -118,7 +119,6 @@ void measure_temperature(void *pvParameter)
             for (int j = 0; j < sensor_count; j++)
             {
                 float temp_c = temps[j];
-                ds18x20_addr_t sensor_address = addrs[j];
 
                 // ESP_LOGI(TAG, "Sensor %08 " PRIx32 "%08" PRIx32 " (%s) reports %.3f°C (%.3f°F)",
                 //          (uint32_t)(addrs[j] >> 32), (uint32_t)addrs[j],
@@ -132,12 +132,21 @@ void measure_temperature(void *pvParameter)
     }
 }
 
+void led_setup()
+{
+    gpio_pad_select_gpio(YELLOW_LED_PIN);
+    gpio_set_direction(YELLOW_LED_PIN, GPIO_MODE_OUTPUT);
+}
+
 void app_main()
 {
-    hcsr04_setup();
+    // hcsr04_setup();
+    // led_setup();
 
     xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
-    xTaskCreate(measure_temperature, "measure_temperature", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
+    // xTaskCreate(measure_temperature, "measure_temperature", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
+
+    // gpio_set_level(YELLOW_LED_PIN, 1);
 }
 
 // #include <inttypes.h>
