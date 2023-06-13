@@ -70,3 +70,6 @@
 /home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/main/libmain.a
 /home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/onewire/libonewire.a
 /home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/ds18x20/libds18x20.a
+/home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/hd44780/libhd44780.a
+/home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/i2cdev/libi2cdev.a
+/home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/pcf8574/libpcf8574.a
