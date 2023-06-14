@@ -1,27 +1,32 @@
-// #include <stdio.h>
-// #include <freertos/FreeRTOS.h>
-// #include <freertos/task.h>
-// #include "esp_system.h"
-// #include "driver/gpio.h"
-// #include "esp_log.h"
-// #include "esp_timer.h"
-// #include <esp_err.h>
-// #include <ds18x20.h>
-// #include <inttypes.h>
+#include <stdio.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+#include "esp_system.h"
+#include "driver/gpio.h"
+#include "esp_log.h"
+#include "esp_timer.h"
+#include <esp_err.h>
+#include <ds18x20.h>
+#include <inttypes.h>
+#include <sys/time.h>
+#include <sys/time.h>
+#include <hd44780.h>
+#include <pcf8574.h>
+#include <string.h>
 
-// #define TRIGGER_PIN 1
-// #define ECHO_PIN 0
-// #define YELLOW_LED_PIN 8
-// #define MAX_TANK_LEVEL_DISTANCE 30
-// #define MIN_TANK_LEVEL_DISTANCE 161
-// #define TANK_SIZE MIN_TANK_LEVEL_DISTANCE - MAX_TANK_LEVEL_DISTANCE
+#define TRIGGER_PIN 1
+#define ECHO_PIN 0
+#define YELLOW_LED_PIN 8
+#define MAX_TANK_LEVEL_DISTANCE 30
+#define MIN_TANK_LEVEL_DISTANCE 161
+#define TANK_SIZE MIN_TANK_LEVEL_DISTANCE - MAX_TANK_LEVEL_DISTANCE
 
 // static const gpio_num_t SENSOR_GPIO = 13;
 // static const int MAX_SENSORS = 1;
 // static const int RESCAN_INTERVAL = 8;
 // static const uint32_t LOOP_DELAY_MS = 500;
 
-// static const char *TAG = "measure_temperature";
+// static const char *TAG = "measureTemperature";
 
 // float measureDistance()
 // {
@@ -83,7 +88,7 @@
 //     gpio_set_direction(ECHO_PIN, GPIO_MODE_INPUT);
 // }
 
-// void measure_temperature(void *pvParameter)
+// void measureTemperature(void *pvParameter)
 // {
 //     ds18x20_addr_t addrs[MAX_SENSORS];
 //     float temps[MAX_SENSORS];
@@ -157,18 +162,9 @@
 
 //     gpio_set_level(YELLOW_LED_PIN, 1);
 
-//     xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
-//     xTaskCreate(measure_temperature, "measure_temperature", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
+//     // xTaskCreate(distanceTask, "distanceTask", 2048, NULL, 5, NULL);
+//     xTaskCreate(measureTemperature, "measureTemperature", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
 // }
-
-#include <inttypes.h>
-#include <stdio.h>
-#include <freertos/FreeRTOS.h>
-#include <freertos/task.h>
-#include <sys/time.h>
-#include <hd44780.h>
-#include <pcf8574.h>
-#include <string.h>
 
 static i2c_dev_t pcf8574;
 
@@ -214,7 +210,7 @@ void lcd_test(void *pvParameters)
     hd44780_upload_character(&lcd, 1, char_data + 8);
 
     hd44780_gotoxy(&lcd, 0, 0);
-    hd44780_puts(&lcd, "\x08 Hello galera!");
+    hd44780_puts(&lcd, "\x08 Hello galeraa!");
     hd44780_gotoxy(&lcd, 0, 1);
     hd44780_puts(&lcd, "\x09 ");
 
