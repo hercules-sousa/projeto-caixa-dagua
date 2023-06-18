@@ -21,6 +21,15 @@
         "esp_log.h": "c",
         "ds18x20.h": "c",
         "stdio.h": "c",
-        "gpio.h": "c"
+        "gpio.h": "c",
+        "iterator": "c",
+        "string": "c",
+        "stdlib.h": "c",
+        "chrono": "c",
+        "cmath": "c",
+        "random": "c",
+        "limits": "c",
+        "sstream": "c",
+        "regex": "c"
     }
 }

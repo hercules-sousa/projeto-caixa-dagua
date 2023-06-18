@@ -123,6 +123,9 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/esp_idf_lib_helpers/cmake_install.cmake")
   include("/home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/onewire/cmake_install.cmake")
   include("/home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/ds18x20/cmake_install.cmake")
+  include("/home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/hd44780/cmake_install.cmake")
+  include("/home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/i2cdev/cmake_install.cmake")
+  include("/home/hss/projetos/projeto-caixa-dagua/project/build/esp-idf/pcf8574/cmake_install.cmake")
 
 endif()
 

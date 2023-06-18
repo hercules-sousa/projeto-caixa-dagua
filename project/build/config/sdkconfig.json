@@ -367,6 +367,8 @@
     "HTTPD_MAX_URI_LEN": 512,
     "HTTPD_PURGE_BUF_LEN": 32,
     "HTTPD_WS_SUPPORT": false,
+    "I2CDEV_NOLOCK": false,
+    "I2CDEV_TIMEOUT": 1000,
     "IDF_CMAKE": true,
     "IDF_FIRMWARE_CHIP_ID": 5,
     "IDF_TARGET": "esp32c3",
