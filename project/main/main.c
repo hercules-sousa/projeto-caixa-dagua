@@ -17,8 +17,8 @@
 
 #define TRIGGER_PIN GPIO_NUM_1
 #define ECHO_PIN GPIO_NUM_0
-#define YELLOW_LED_PIN GPIO_NUM_8
-#define GREEN_LED_PIN GPIO_NUM_12
+#define YELLOW_BOMB_LED_PIN GPIO_NUM_8
+#define GREEN_RESISTENCE_LED_PIN GPIO_NUM_12
 #define BUTTON_PIN1 GPIO_NUM_7
 #define BUTTON_PIN2 GPIO_NUM_6
 #define BUTTON_PIN4 GPIO_NUM_10
@@ -28,15 +28,18 @@
 #define MAX_SENSORS 1
 #define TANK_MIN 23.74
 #define TANK_MAX 7.74
+#define MIN_DISTANCE 10
+#define MAX_DISTANCE 100
 
 static const gpio_num_t SENSOR_GPIO = 13;
 static const int RESCAN_INTERVAL = 8;
 static const uint32_t LOOP_DELAY_MS = 500;
 static int is_choose_config_menu_on = 0;
 static int is_config_menu_on = 0;
-static int distance_percentage = 10;
-static int temperature_level = 22;
+static int distance_percentage = 50;
+static int temperature_level = 27;
 static int is_bomb_on = 0;
+static int is_resistance_on = 0;
 
 static const char *TAG = "Project";
 
@@ -90,8 +93,6 @@ float calculate_percent_distance()
     uint32_t pulse_duration = pulse_end - pulse_start;
     float distance = pulse_duration / 58.0;
 
-    ESP_LOGI(TAG, "distance = %.2f", distance);
-
     int percent = ((distance - TANK_MIN) / (TANK_MAX - TANK_MIN)) * 100;
 
     ESP_LOGI(TAG, "Percent = %d", percent);
@@ -103,7 +104,7 @@ void distance_task(void *pvParameter)
 {
 
     char string_distance[16];
-    int counter_level_above_top = 0;
+    int counter_level_above_set = 0;
     int counter_level_below_set = 0;
     int biggest_string_size = 0;
 
@@ -130,7 +131,7 @@ void distance_task(void *pvParameter)
                 counter_level_below_set++;
                 if (counter_level_below_set >= 3)
                 {
-                    gpio_set_level(YELLOW_LED_PIN, 1);
+                    gpio_set_level(YELLOW_BOMB_LED_PIN, 1);
                     is_bomb_on = 1;
                 }
             }
@@ -141,18 +142,18 @@ void distance_task(void *pvParameter)
         }
         else
         {
-            if (distance >= 100)
+            if (distance > distance_percentage)
             {
-                counter_level_above_top++;
-                if (counter_level_above_top >= 3)
+                counter_level_above_set++;
+                if (counter_level_above_set >= 3)
                 {
-                    gpio_set_level(YELLOW_LED_PIN, 0);
+                    gpio_set_level(YELLOW_BOMB_LED_PIN, 0);
                     is_bomb_on = 0;
                 }
             }
             else
             {
-                counter_level_above_top = 0;
+                counter_level_above_set = 0;
             }
         }
 
@@ -199,6 +200,9 @@ void temperature_task(void *pvParameter)
     gpio_set_pull_mode(SENSOR_GPIO, GPIO_PULLUP_ONLY);
 
     char stringTemperature[16];
+
+    int counter_temperature_above_set = 0;
+    int counter_temperature_below_set = 0;
 
     esp_err_t res;
     while (1)
@@ -248,7 +252,40 @@ void temperature_task(void *pvParameter)
                     write_on_lcd(stringTemperature, 1);
                 }
 
-                // ESP_LOGI(TAG, "Temperatura = %.3f°C", temp_c);
+                if (!is_resistance_on)
+                {
+                    if (temp_c <= temperature_level)
+                    {
+                        counter_temperature_below_set++;
+                        if (counter_temperature_below_set >= 3)
+                        {
+                            gpio_set_level(GREEN_RESISTENCE_LED_PIN, 1);
+                            is_resistance_on = 1;
+                        }
+                    }
+                    else
+                    {
+                        counter_temperature_below_set = 0;
+                    }
+                }
+                else
+                {
+                    if (temp_c > temperature_level)
+                    {
+                        counter_temperature_above_set++;
+                        if (counter_temperature_above_set >= 3)
+                        {
+                            gpio_set_level(GREEN_RESISTENCE_LED_PIN, 0);
+                            is_resistance_on = 0;
+                        }
+                    }
+                    else
+                    {
+                        counter_temperature_above_set = 0;
+                    }
+                }
+
+                ESP_LOGI(TAG, "Temperatura = %.3f°C", temp_c);
             }
 
             vTaskDelay(pdMS_TO_TICKS(LOOP_DELAY_MS));
@@ -258,12 +295,12 @@ void temperature_task(void *pvParameter)
 
 void led_setup()
 {
-    gpio_pad_select_gpio(YELLOW_LED_PIN);
-    gpio_set_direction(YELLOW_LED_PIN, GPIO_MODE_OUTPUT);
-    gpio_pad_select_gpio(GREEN_LED_PIN);
-    gpio_set_direction(GREEN_LED_PIN, GPIO_MODE_OUTPUT);
+    gpio_pad_select_gpio(YELLOW_BOMB_LED_PIN);
+    gpio_set_direction(YELLOW_BOMB_LED_PIN, GPIO_MODE_OUTPUT);
+    gpio_pad_select_gpio(GREEN_RESISTENCE_LED_PIN);
+    gpio_set_direction(GREEN_RESISTENCE_LED_PIN, GPIO_MODE_OUTPUT);
 
-    gpio_set_level(GREEN_LED_PIN, 1);
+    gpio_set_level(GREEN_RESISTENCE_LED_PIN, 0);
 }
 
 void lcd_setup()
@@ -405,11 +442,19 @@ void app_main()
                 {
                     if (config_option)
                     {
-                        temperature_level++;
+
+                        if (temperature_level < 50)
+                        {
+                            temperature_level++;
+                        }
                     }
                     if (!config_option)
                     {
-                        distance_percentage += 5;
+
+                        if (distance_percentage < MIN_DISTANCE)
+                        {
+                            distance_percentage += 5;
+                        }
                     }
                 }
             }
@@ -435,7 +480,10 @@ void app_main()
                     }
                     if (!config_option)
                     {
-                        distance_percentage -= 5;
+                        if (distance_percentage > MIN_DISTANCE)
+                        {
+                            distance_percentage -= 5;
+                        }
                     }
                 }
             }
