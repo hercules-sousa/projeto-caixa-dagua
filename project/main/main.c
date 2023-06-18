@@ -15,18 +15,21 @@
 #include <string.h>
 #include <math.h>
 
-#define TRIGGER_PIN 1
-#define ECHO_PIN 0
-#define GREEN_LED_PIN 8
+#define TRIGGER_PIN GPIO_NUM_1
+#define ECHO_PIN GPIO_NUM_0
+#define YELLOW_LED_PIN GPIO_NUM_8
+#define GREEN_LED_PIN GPIO_NUM_12
 #define BUTTON_PIN1 GPIO_NUM_7
 #define BUTTON_PIN2 GPIO_NUM_6
 #define BUTTON_PIN4 GPIO_NUM_10
 #define BUTTON_PIN3 GPIO_NUM_3
 #define MAX_TANK_LEVEL 20
 #define DISTANCE_BETWEEN_SENSOR_TANK 3.5
+#define MAX_SENSORS 1
+#define TANK_MIN 23.74
+#define TANK_MAX 7.74
 
 static const gpio_num_t SENSOR_GPIO = 13;
-static const int MAX_SENSORS = 1;
 static const int RESCAN_INTERVAL = 8;
 static const uint32_t LOOP_DELAY_MS = 500;
 static int is_choose_config_menu_on = 0;
@@ -89,41 +92,15 @@ float calculate_percent_distance()
 
     ESP_LOGI(TAG, "distance = %.2f", distance);
 
-    int percentagem;
+    int percent = ((distance - TANK_MIN) / (TANK_MAX - TANK_MIN)) * 100;
 
-    float min = 23.74;
-    float max = 7.74;
+    ESP_LOGI(TAG, "Percent = %d", percent);
 
-    percentagem = ((distance - min) / (max - min)) * 100;
-
-    ESP_LOGI(TAG, "percentagem = %d", percentagem);
-
-    // float distance_sensor_top = fabs(distance - MAX_TANK_LEVEL);
-    // ESP_LOGI(TAG, "distance between sensor to top = %.2f", distance_sensor_top);
-
-    // float actual_distance = fabs(distance - distance_sensor_top);
-    // ESP_LOGI(TAG, "actual_distance = %.2f", actual_distance);
-
-    // float level = fabs(MAX_TANK_LEVEL - actual_distance);
-    // ESP_LOGI(TAG, "level = %.2f", level);
-
-    // float percent_level = level * 100 / MAX_TANK_LEVEL;
-    // ESP_LOGI(TAG, "percent_level = %.2f", percent_level);
-
-    return percentagem;
+    return percent;
 }
 
 void distance_task(void *pvParameter)
 {
-    gpio_pad_select_gpio(TRIGGER_PIN);
-    gpio_set_direction(TRIGGER_PIN, GPIO_MODE_OUTPUT);
-
-    gpio_pad_select_gpio(ECHO_PIN);
-    gpio_set_direction(ECHO_PIN, GPIO_MODE_INPUT);
-
-    gpio_set_intr_type(ECHO_PIN, GPIO_INTR_ANYEDGE);
-    gpio_install_isr_service(0);
-    gpio_isr_handler_add(ECHO_PIN, echo_isr_handler, NULL);
 
     char string_distance[16];
     int counter_level_above_top = 0;
@@ -153,7 +130,7 @@ void distance_task(void *pvParameter)
                 counter_level_below_set++;
                 if (counter_level_below_set >= 3)
                 {
-                    gpio_set_level(GREEN_LED_PIN, 1);
+                    gpio_set_level(YELLOW_LED_PIN, 1);
                     is_bomb_on = 1;
                 }
             }
@@ -169,7 +146,7 @@ void distance_task(void *pvParameter)
                 counter_level_above_top++;
                 if (counter_level_above_top >= 3)
                 {
-                    gpio_set_level(GREEN_LED_PIN, 0);
+                    gpio_set_level(YELLOW_LED_PIN, 0);
                     is_bomb_on = 0;
                 }
             }
@@ -203,8 +180,13 @@ void hcsr04_setup()
     // Configurar os pinos como GPIO de saída e entrada, respectivamente
     gpio_pad_select_gpio(TRIGGER_PIN);
     gpio_set_direction(TRIGGER_PIN, GPIO_MODE_OUTPUT);
+
     gpio_pad_select_gpio(ECHO_PIN);
     gpio_set_direction(ECHO_PIN, GPIO_MODE_INPUT);
+
+    gpio_set_intr_type(ECHO_PIN, GPIO_INTR_ANYEDGE);
+    gpio_install_isr_service(0);
+    gpio_isr_handler_add(ECHO_PIN, echo_isr_handler, NULL);
 }
 
 void temperature_task(void *pvParameter)
@@ -276,8 +258,12 @@ void temperature_task(void *pvParameter)
 
 void led_setup()
 {
+    gpio_pad_select_gpio(YELLOW_LED_PIN);
+    gpio_set_direction(YELLOW_LED_PIN, GPIO_MODE_OUTPUT);
     gpio_pad_select_gpio(GREEN_LED_PIN);
     gpio_set_direction(GREEN_LED_PIN, GPIO_MODE_OUTPUT);
+
+    gpio_set_level(GREEN_LED_PIN, 1);
 }
 
 void lcd_setup()
@@ -341,6 +327,7 @@ void app_main()
     int previous_state4 = state4;
 
     int config_option = 0;
+    int biggest_config_string = 0;
 
     while (1)
     {
@@ -465,6 +452,13 @@ void app_main()
             char config_string[16];
 
             snprintf(config_string, sizeof(config_string), config_option ? "Temp = %d" : "Dist = %d%%", config_option ? temperature_level : distance_percentage);
+
+            if (strlen(config_string) < biggest_config_string)
+            {
+                hd44780_clear(&lcd);
+            }
+
+            biggest_config_string = strlen(config_string);
 
             write_on_lcd("Set config", 0);
             write_on_lcd(config_string, 1);

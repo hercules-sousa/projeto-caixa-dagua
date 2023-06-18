@@ -28,6 +28,8 @@
         "chrono": "c",
         "cmath": "c",
         "random": "c",
-        "limits": "c"
+        "limits": "c",
+        "sstream": "c",
+        "regex": "c"
     }
 }
