@@ -30,10 +30,11 @@
 #define TANK_MAX 7.74
 #define MIN_DISTANCE 10
 #define MAX_DISTANCE 100
+#define LCD_STRING_SIZE 16
 
 static const gpio_num_t SENSOR_GPIO = 13;
 static const int RESCAN_INTERVAL = 8;
-static const uint32_t LOOP_DELAY_MS = 500;
+static const uint32_t LOOP_DELAY_MS = 100;
 static int is_choose_config_menu_on = 0;
 static int is_config_menu_on = 0;
 static int distance_percentage = 50;
@@ -103,7 +104,7 @@ float calculate_percent_distance()
 void distance_task(void *pvParameter)
 {
 
-    char string_distance[16];
+    char string_distance[LCD_STRING_SIZE];
     int counter_level_above_set = 0;
     int counter_level_below_set = 0;
     int biggest_string_size = 0;
@@ -115,7 +116,7 @@ void distance_task(void *pvParameter)
         ets_delay_us(10);
         gpio_set_level(TRIGGER_PIN, 0);
 
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        vTaskDelay(100 / portTICK_PERIOD_MS);
 
         float distance = calculate_percent_distance();
 
@@ -126,7 +127,7 @@ void distance_task(void *pvParameter)
 
         if (!is_bomb_on)
         {
-            if (distance <= distance_percentage)
+            if (distance <= MIN_DISTANCE)
             {
                 counter_level_below_set++;
                 if (counter_level_below_set >= 3)
@@ -199,7 +200,10 @@ void temperature_task(void *pvParameter)
 
     gpio_set_pull_mode(SENSOR_GPIO, GPIO_PULLUP_ONLY);
 
-    char stringTemperature[16];
+    char stringTemperature[LCD_STRING_SIZE];
+
+    memset(stringTemperature, ' ', LCD_STRING_SIZE);
+    stringTemperature[LCD_STRING_SIZE] = '\0';
 
     int counter_temperature_above_set = 0;
     int counter_temperature_below_set = 0;
@@ -451,7 +455,7 @@ void app_main()
                     if (!config_option)
                     {
 
-                        if (distance_percentage < MIN_DISTANCE)
+                        if (distance_percentage < MAX_DISTANCE)
                         {
                             distance_percentage += 5;
                         }
@@ -497,7 +501,10 @@ void app_main()
 
         if (is_config_menu_on)
         {
-            char config_string[16];
+            char config_string[LCD_STRING_SIZE];
+
+            memset(config_string, ' ', LCD_STRING_SIZE);
+            config_string[LCD_STRING_SIZE] = '\0';
 
             snprintf(config_string, sizeof(config_string), config_option ? "Temp = %d" : "Dist = %d%%", config_option ? temperature_level : distance_percentage);
 
