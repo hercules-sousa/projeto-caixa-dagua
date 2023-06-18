@@ -23,6 +23,11 @@
         "stdio.h": "c",
         "gpio.h": "c",
         "iterator": "c",
-        "string": "c"
+        "string": "c",
+        "stdlib.h": "c",
+        "chrono": "c",
+        "cmath": "c",
+        "random": "c",
+        "limits": "c"
     }
 }

@@ -13,14 +13,17 @@
 #include <hd44780.h>
 #include <pcf8574.h>
 #include <string.h>
+#include <math.h>
 
 #define TRIGGER_PIN 1
 #define ECHO_PIN 0
-#define YELLOW_LED_PIN 8
+#define GREEN_LED_PIN 8
 #define BUTTON_PIN1 GPIO_NUM_7
 #define BUTTON_PIN2 GPIO_NUM_6
 #define BUTTON_PIN4 GPIO_NUM_10
 #define BUTTON_PIN3 GPIO_NUM_3
+#define MAX_TANK_LEVEL 20
+#define DISTANCE_BETWEEN_SENSOR_TANK 3.5
 
 static const gpio_num_t SENSOR_GPIO = 13;
 static const int MAX_SENSORS = 1;
@@ -28,8 +31,9 @@ static const int RESCAN_INTERVAL = 8;
 static const uint32_t LOOP_DELAY_MS = 500;
 static int is_choose_config_menu_on = 0;
 static int is_config_menu_on = 0;
-static int distance_percentage = 70;
+static int distance_percentage = 10;
 static int temperature_level = 22;
+static int is_bomb_on = 0;
 
 static const char *TAG = "Project";
 
@@ -78,11 +82,35 @@ void IRAM_ATTR echo_isr_handler(void *arg)
     }
 }
 
-float calculate_distance()
+float calculate_percent_distance()
 {
     uint32_t pulse_duration = pulse_end - pulse_start;
     float distance = pulse_duration / 58.0;
-    return distance;
+
+    ESP_LOGI(TAG, "distance = %.2f", distance);
+
+    int percentagem;
+
+    float min = 23.74;
+    float max = 7.74;
+
+    percentagem = ((distance - min) / (max - min)) * 100;
+
+    ESP_LOGI(TAG, "percentagem = %d", percentagem);
+
+    // float distance_sensor_top = fabs(distance - MAX_TANK_LEVEL);
+    // ESP_LOGI(TAG, "distance between sensor to top = %.2f", distance_sensor_top);
+
+    // float actual_distance = fabs(distance - distance_sensor_top);
+    // ESP_LOGI(TAG, "actual_distance = %.2f", actual_distance);
+
+    // float level = fabs(MAX_TANK_LEVEL - actual_distance);
+    // ESP_LOGI(TAG, "level = %.2f", level);
+
+    // float percent_level = level * 100 / MAX_TANK_LEVEL;
+    // ESP_LOGI(TAG, "percent_level = %.2f", percent_level);
+
+    return percentagem;
 }
 
 void distance_task(void *pvParameter)
@@ -98,6 +126,9 @@ void distance_task(void *pvParameter)
     gpio_isr_handler_add(ECHO_PIN, echo_isr_handler, NULL);
 
     char string_distance[16];
+    int counter_level_above_top = 0;
+    int counter_level_below_set = 0;
+    int biggest_string_size = 0;
 
     while (1)
     {
@@ -108,16 +139,62 @@ void distance_task(void *pvParameter)
 
         vTaskDelay(pdMS_TO_TICKS(1000));
 
-        float distance = calculate_distance();
+        float distance = calculate_percent_distance();
 
-        snprintf(string_distance, sizeof(string_distance), "Dist = %.2f", distance);
+        // if (distance < 0)
+        // {
+        //     distance = 0;
+        // }
+
+        if (!is_bomb_on)
+        {
+            if (distance <= distance_percentage)
+            {
+                counter_level_below_set++;
+                if (counter_level_below_set >= 3)
+                {
+                    gpio_set_level(GREEN_LED_PIN, 1);
+                    is_bomb_on = 1;
+                }
+            }
+            else
+            {
+                counter_level_below_set = 0;
+            }
+        }
+        else
+        {
+            if (distance >= 100)
+            {
+                counter_level_above_top++;
+                if (counter_level_above_top >= 3)
+                {
+                    gpio_set_level(GREEN_LED_PIN, 0);
+                    is_bomb_on = 0;
+                }
+            }
+            else
+            {
+                counter_level_above_top = 0;
+            }
+        }
+
+        snprintf(string_distance, sizeof(string_distance), "Dist = %d%%", (int)distance);
+
+        if (strlen(string_distance) < biggest_string_size)
+        {
+
+            hd44780_clear(&lcd);
+        }
+
+        biggest_string_size = strlen(string_distance);
 
         if (!is_choose_config_menu_on && !is_config_menu_on)
         {
             write_on_lcd(string_distance, 0);
         }
 
-        ESP_LOGI(TAG, "Distance = %.3f°C", distance);
+        // ESP_LOGI(TAG, "Distance = %.2f", distance);
     }
 }
 
@@ -189,7 +266,7 @@ void temperature_task(void *pvParameter)
                     write_on_lcd(stringTemperature, 1);
                 }
 
-                ESP_LOGI(TAG, "Temperatura = %.3f°C", temp_c);
+                // ESP_LOGI(TAG, "Temperatura = %.3f°C", temp_c);
             }
 
             vTaskDelay(pdMS_TO_TICKS(LOOP_DELAY_MS));
@@ -199,8 +276,8 @@ void temperature_task(void *pvParameter)
 
 void led_setup()
 {
-    gpio_pad_select_gpio(YELLOW_LED_PIN);
-    gpio_set_direction(YELLOW_LED_PIN, GPIO_MODE_OUTPUT);
+    gpio_pad_select_gpio(GREEN_LED_PIN);
+    gpio_set_direction(GREEN_LED_PIN, GPIO_MODE_OUTPUT);
 }
 
 void lcd_setup()
@@ -248,8 +325,6 @@ void app_main()
     lcd_setup();
     buttons_setup();
 
-    // gpio_set_level(YELLOW_LED_PIN, 1);
-
     xTaskCreate(distance_task, "distance_task", 2048, NULL, 5, NULL);
     xTaskCreate(temperature_task, "temperature_task", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
 
@@ -266,7 +341,6 @@ void app_main()
     int previous_state4 = state4;
 
     int config_option = 0;
-    int is_config_option_selected = 0;
 
     while (1)
     {
@@ -278,6 +352,7 @@ void app_main()
         if (state1 != previous_state1)
         {
             previous_state1 = state1;
+
             if (!state1)
             {
                 if (is_choose_config_menu_on)
@@ -306,11 +381,11 @@ void app_main()
         if (state2 != previous_state2)
         {
             previous_state2 = state2;
+
             if (!state2)
             {
                 if (is_choose_config_menu_on)
                 {
-                    printf("Botão2\n");
                     hd44780_clear(&lcd);
                     is_choose_config_menu_on = 0;
                     is_config_menu_on = 1;
@@ -347,7 +422,7 @@ void app_main()
                     }
                     if (!config_option)
                     {
-                        distance_percentage++;
+                        distance_percentage += 5;
                     }
                 }
             }
@@ -373,7 +448,7 @@ void app_main()
                     }
                     if (!config_option)
                     {
-                        distance_percentage--;
+                        distance_percentage -= 5;
                     }
                 }
             }
