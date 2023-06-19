@@ -38,7 +38,7 @@ static const uint32_t LOOP_DELAY_MS = 100;
 static int is_choose_config_menu_on = 0;
 static int is_config_menu_on = 0;
 static int distance_percentage = 50;
-static int temperature_level = 27;
+static int temperature_level = 30;
 static int is_bomb_on = 0;
 static int is_resistance_on = 0;
 
@@ -127,7 +127,7 @@ void distance_task(void *pvParameter)
 
         if (!is_bomb_on)
         {
-            if (distance <= MIN_DISTANCE)
+            if (distance <= distance_percentage)
             {
                 counter_level_below_set++;
                 if (counter_level_below_set >= 3)
@@ -158,13 +158,13 @@ void distance_task(void *pvParameter)
             }
         }
 
-        snprintf(string_distance, sizeof(string_distance), "Dist = %d%%", (int)distance);
+        snprintf(string_distance, sizeof(string_distance), "Dist = %d%%     ", (int)distance);
 
-        if (strlen(string_distance) < biggest_string_size)
-        {
+        // if (strlen(string_distance) < biggest_string_size)
+        // {
 
-            hd44780_clear(&lcd);
-        }
+        //     hd44780_clear(&lcd);
+        // }
 
         biggest_string_size = strlen(string_distance);
 
@@ -249,7 +249,7 @@ void temperature_task(void *pvParameter)
             {
                 float temp_c = temps[j];
 
-                snprintf(stringTemperature, sizeof(stringTemperature), "Temp = %.2f", temp_c);
+                snprintf(stringTemperature, sizeof(stringTemperature), "Temp = %.2f\xDF\C  ", temp_c);
 
                 if (!is_choose_config_menu_on && !is_config_menu_on)
                 {
@@ -261,7 +261,7 @@ void temperature_task(void *pvParameter)
                     if (temp_c <= temperature_level)
                     {
                         counter_temperature_below_set++;
-                        if (counter_temperature_below_set >= 3)
+                        if (counter_temperature_below_set >= 3 && distance_percentage >= 10)
                         {
                             gpio_set_level(GREEN_RESISTENCE_LED_PIN, 1);
                             is_resistance_on = 1;
@@ -289,7 +289,7 @@ void temperature_task(void *pvParameter)
                     }
                 }
 
-                ESP_LOGI(TAG, "Temperatura = %.3f°C", temp_c);
+                ESP_LOGI(TAG, "Temperature = %.3f°C", temp_c);
             }
 
             vTaskDelay(pdMS_TO_TICKS(LOOP_DELAY_MS));
@@ -353,7 +353,7 @@ void app_main()
     buttons_setup();
 
     xTaskCreate(distance_task, "distance_task", 2048, NULL, 5, NULL);
-    xTaskCreate(temperature_task, "temperature_task", configMINIMAL_STACK_SIZE * 4, NULL, 5, NULL);
+    xTaskCreate(temperature_task, "temperature_task", configMINIMAL_STACK_SIZE * 32, NULL, 5, NULL);
 
     int state1 = 1;
     int previous_state1 = state1;
