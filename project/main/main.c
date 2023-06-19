@@ -9,7 +9,6 @@
 #include <ds18x20.h>
 #include <inttypes.h>
 #include <sys/time.h>
-#include <sys/time.h>
 #include <hd44780.h>
 #include <pcf8574.h>
 #include <string.h>

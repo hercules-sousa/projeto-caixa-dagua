@@ -30,6 +30,10 @@
         "random": "c",
         "limits": "c",
         "sstream": "c",
-        "regex": "c"
+        "regex": "c",
+        "time.h": "c",
+        "hd44780.h": "c",
+        "pcf8574.h": "c",
+        "math.h": "c"
     }
 }
