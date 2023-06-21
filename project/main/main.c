@@ -119,11 +119,6 @@ void distance_task(void *pvParameter)
 
         float distance = calculate_percent_distance();
 
-        // if (distance < 0)
-        // {
-        //     distance = 0;
-        // }
-
         if (!is_bomb_on)
         {
             if (distance <= distance_percentage)
@@ -158,12 +153,6 @@ void distance_task(void *pvParameter)
         }
 
         snprintf(string_distance, sizeof(string_distance), "Dist = %d%%     ", (int)distance);
-
-        // if (strlen(string_distance) < biggest_string_size)
-        // {
-
-        //     hd44780_clear(&lcd);
-        // }
 
         biggest_string_size = strlen(string_distance);
 
